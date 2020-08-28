@@ -67,13 +67,9 @@
         </div>
        
         <script>
-            var jooj = 1;
-            $("button").click(function(){
             $.ajax({url: "./zsources/blog%20text/texto.txt", success: function(result){
                 $("#content").html(result);
-                jooj = result;
             }});
-            });
 /*
             document.getElementById("content").innerHTML = `
             <h1>bllah</h1>

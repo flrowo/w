@@ -48,7 +48,7 @@
         <div id="menu">
             <div style="width: 184px; height: 184px; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,.15); border: 1px solid #ddd;">
                 <div style="width: 176px; height: 176px; padding: 4px;">
-                    <img style="width: 100%; height: 100%; object-fit: cover; " src="./_sources/duck guy.png">
+                    <img style="width: 100%; height: 100%; object-fit: cover; " src="./zsources/duck guy.png">
                 </div>
             </div>
             <div style="text-align: center; margin: 15px auto; font-size: 30px;">joao pedro "lake" libonati</div>
@@ -69,7 +69,7 @@
         <script>
             var jooj = 1;
             $("button").click(function(){
-            $.ajax({url: "./_sources/blog%20text/texto.txt", success: function(result){
+            $.ajax({url: "./zsources/blog%20text/texto.txt", success: function(result){
                 $("#content").html(result);
                 jooj = result;
             }});

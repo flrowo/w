@@ -34,7 +34,7 @@
             float: right;
             width: 730px;
             overflow: hidden;
-            padding: 15px;
+            margin: 0px 30px 30px 0px;
         }
         a{
             text-decoration: none;
@@ -67,6 +67,7 @@
         </div>
        
         <script>
+            
             class Content {
                 constructor(title, text, date){
                     this.title = title;
@@ -78,25 +79,26 @@
             let text = null;
             let content = [];
             let allright = false;
-            $.ajax({url: "./zsources/blog text/texto.txt", success: function(result){
+            
+            
+            $.ajax({url: "./zsources/blog%20text/texto.txt", success: function(result){
                 text = result;
                 allright = true;
-            }});
+                createContent(true);
+            }, error: function(){createContent(false); alert("it is not the online .txt")}
+            });
 
-            if(text == null){
-                text = `T> UM TÍTULO
-p> hoje eu fiz um site
+            function createContent(hasText){
+                if(hasText == false){
+                    text = `T> UM TÍTULO MUUU U UU U UU UUUUUU ITO GRANDE
+p> aaaaa 
+hoje eu fiz um site
 construi do zero muleke
 
+blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
+<img style="margin: 30px;" src="https://a.ppy.sh/4689256_1596477920.gif">
 blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-<img style="float: left; margin: 10px;" src="https://a.ppy.sh/4689256_1596477920.gif">
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah
-
+aaaaaaaaaa
 DATE> 28/08/2020
 
 
@@ -116,43 +118,45 @@ blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahb
 
 
 DATE> 27/08/2020`;
-            }
+                }
             
 
-            content = text.split("T>");
-            //filtered is the content with only the items that have "T>", "p>" and "DATE>"
-            let filtered = content.filter(function(el){
-                return (el != "" && el != null && (el.includes("p>") && el.includes("DATE>")));
-            });
-            
-            let actContent = [];
-            
-            (() => {
-                let i = 0;
-                while(i < filtered.length){
-                    let title = filtered[i].split("p>")[0].trim();
-                    let text = filtered[i].split("p>")[1].split("DATE>")[0].trim().replace(/\n/g,"<br>");
-                    let date = "<br><br>"+filtered[i].split("p>")[1].split("DATE>")[1].trim();
-                    actContent.push(new Content(title, text, date));
-                    i++;
-                }
-            })();
-            
-            (() => {
-                let i = 0;
-                let htmlstring = ""
-                while(i < actContent.length){
-                    htmlstring += `
-                    <h1>${actContent[i].title}</h1>
-                    <hr>
-                    ${actContent[i].text}
-                    <br>
-                    ${actContent[i].date}
-                    <br><br><br>`;
-                    i++;
-                }
-                document.getElementById("content").innerHTML = htmlstring.trim();
-            })();
+                content = text.split("T>");
+                //filtered is the content with only the items that have "T>", "p>" and "DATE>"
+                let filtered = content.filter(function(el){
+                    return (el != "" && el != null && (el.includes("p>") && el.includes("DATE>")));
+                });
+                
+                let actContent = [];
+                
+                (() => {
+                    let i = 0;
+                    while(i < filtered.length){
+                        let title = filtered[i].split("p>")[0].trim();
+                        let text = filtered[i].split("p>")[1].split("DATE>")[0].trim().replace(/\n/g,"<br>");
+                        let date = "<br><br>"+filtered[i].split("p>")[1].split("DATE>")[1].trim();
+                        actContent.push(new Content(title, text, date));
+                        i++;
+                    }
+                })();
+                
+                (() => {
+                    let i = 0;
+                    let htmlstring = ""
+                    while(i < actContent.length){
+                        htmlstring += `<div style="float:right; width: 100%">
+                        <h1>${actContent[i].title}</h1>
+                        <hr>
+                        ${actContent[i].text}
+                        <br>
+                        ${actContent[i].date}
+                        <br><br></div><br>`;
+                        i++;
+                    }
+                    document.getElementById("content").innerHTML = htmlstring.trim();
+                })();
+        
+            }
             
             
         </script>

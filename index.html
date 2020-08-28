@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lake's portifolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        html{
+            font-family: arial grande,Tahoma,Helvetica,Arial,sans-serif;
+        }
+        body{
+            margin: 0px;
+            background-color:#a9a9ff;
+        }
+        #sbody{
+            overflow: hidden;
+            width: 1000px;
+            margin: 100px auto;
+            background-color: #F0ECFA;
+            border-radius: 3px;
+        }
+        #menu{
+            float: left;
+            width: 200px;
+            overflow: hidden;
+            padding: 15px;
+        }
+        .menu-item{
+            padding: 0px 10px 0px 10px;
+            margin: 10px;
+        }
+        #content{
+            float: right;
+            width: 730px;
+            overflow: hidden;
+            padding: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: #0955e0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <div id="sbody">
+        <div id="menu">
+            <div style="width: 184px; height: 184px; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,.15); border: 1px solid #ddd;">
+                <div style="width: 176px; height: 176px; padding: 4px;">
+                    <img style="width: 100%; height: 100%; object-fit: cover; " src="_sources/duck guy.png">
+                </div>
+            </div>
+            <div style="text-align: center; margin: 15px auto; font-size: 30px;">joao pedro "lake" libonati</div>
+            <div class="menu-item"><a href="about me/index.html">&#10068; about me</a></div>
+            <div class="menu-item"><a href="art/index.html">&#127912; art</a></div>
+            <div class="menu-item"><a href="design/index.html">&#9997; design</a></div>
+            <div class="menu-item"><a href="games/index.html">&#127918; games</a></div>
+            <div class="menu-item"><a href="music/index.html">&#127911; music</a></div>
+            <div class="menu-item"><a href="tools/index.html">&#128295; tools</a></div>
+            <div class="menu-item"><a href="video editing/index.html">&#127909; video editing</a></div>
+            <div class="menu-item"><a href="resume/index.html">📝 resume</a></div>
+        </div>
+        <div id="content">
+            
+            
+        </div>
+       
+        <script>
+            var jooj = 1;
+            $("button").click(function(){
+            $.ajax({url: "_sources/blog%20text/texto.txt", success: function(result){
+                $("#content").html(result);
+            }});
+            });
+/*
+            document.getElementById("content").innerHTML = `
+            <h1>bllah</h1>
+            <hr>
+            
+            `;
+*/
+        </script>
+    </div>
+</body>
+</html>

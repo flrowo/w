@@ -1,15 +1,8 @@
 T> UM TÍTULO
 p> hoje eu fiz um site
 construi do zero muleke
-
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
+ 
 <img style="float: left; margin: 10px;" src="https://a.ppy.sh/4689256_1596477920.gif">
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
-blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah
 
 DATE> 28/08/2020
 

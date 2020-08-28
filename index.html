@@ -48,7 +48,7 @@
         <div id="menu">
             <div style="width: 184px; height: 184px; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,.15); border: 1px solid #ddd;">
                 <div style="width: 176px; height: 176px; padding: 4px;">
-                    <img style="width: 100%; height: 100%; object-fit: cover; " src="_sources/duck guy.png">
+                    <img style="width: 100%; height: 100%; object-fit: cover; " src="./_sources/duck guy.png">
                 </div>
             </div>
             <div style="text-align: center; margin: 15px auto; font-size: 30px;">joao pedro "lake" libonati</div>
@@ -57,9 +57,9 @@
             <div class="menu-item"><a href="design/index.html">&#9997; design</a></div>
             <div class="menu-item"><a href="games/index.html">&#127918; games</a></div>
             <div class="menu-item"><a href="music/index.html">&#127911; music</a></div>
+            <div class="menu-item"><a href="resume/index.html">&#128221; resume</a></div>
             <div class="menu-item"><a href="tools/index.html">&#128295; tools</a></div>
             <div class="menu-item"><a href="video editing/index.html">&#127909; video editing</a></div>
-            <div class="menu-item"><a href="resume/index.html">📝 resume</a></div>
         </div>
         <div id="content">
             
@@ -69,8 +69,9 @@
         <script>
             var jooj = 1;
             $("button").click(function(){
-            $.ajax({url: "_sources/blog%20text/texto.txt", success: function(result){
+            $.ajax({url: "./_sources/blog%20text/texto.txt", success: function(result){
                 $("#content").html(result);
+                jooj = result;
             }});
             });
 /*

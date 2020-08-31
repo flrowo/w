@@ -48,25 +48,39 @@
             overflow: hidden;
             margin: 0px 30px 30px 0px;
         }
+        .content-item{
+            float:right; width: 100%;
+        }
         a{
             text-decoration: none;
             color: #0955e0;
         }
         
         /* when width < 1100px */
-        @media (max-width:1100px) { 
+        @media (max-width:1100px) {
+            body{
+                margin: auto;
+            }
+            #sbody{
+                margin: 50px auto;
+                width: 96%;
+            }
             #menu{
                 float: unset;
                 width: 100%;
+                padding: 0;
+            }
+            #div-pfp-border{
+                margin: 10% auto;
             }
             .menu-item{
                 float: left;
             }
             #content{
-                float: left;
-                width: 96%;
+                float: unset;
+                margin: auto;
+                width: 86%;
                 overflow: hidden;
-                padding: 15px;
             }
         }
     </style>
@@ -94,8 +108,7 @@
             <div class="menu-item"><a href="video editing/index.html">&#127909; video editing</a></div>
         </div>
         <div id="content">
-            
-            
+            Loading...
         </div>
        
         <script>
@@ -117,7 +130,7 @@
                 text = result;
                 allright = true;
                 createContent(true);
-            }, error: function(){createContent(false); alert("it is not the online .txt")}
+            }, error: function(){createContent(false); console.log("couldn't get the online .txt")}
             });
 
             function createContent(hasText){
@@ -185,7 +198,7 @@ DATE> 27/08/2020
                     let i = 0;
                     let htmlstring = ""
                     while(i < actContent.length){
-                        htmlstring += `<div style="float:right; width: 100%">
+                        htmlstring += `<div class="content-item">
                         <h1>${actContent[i].title}</h1>
                         <hr>
                         ${actContent[i].text}

@@ -26,6 +26,18 @@
             overflow: hidden;
             padding: 15px;
         }
+        #div-pfp-border{
+            width: 184px; height: 184px; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,.15); border: 1px solid #ddd;
+        }
+        #div-pfp{
+            width: 176px; height: 176px; padding: 4px;
+        }
+        #div-pfp img{
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        #name-text{
+            text-align: center; margin: 15px auto; font-size: 30px;
+        }
         .menu-item{
             padding: 0px 10px 0px 10px;
             margin: 10px;
@@ -40,18 +52,38 @@
             text-decoration: none;
             color: #0955e0;
         }
+        
+        /* when width < 1100px */
+        @media (max-width:1100px) { 
+            #menu{
+                float: unset;
+                width: 100%;
+            }
+            .menu-item{
+                float: left;
+            }
+            #content{
+                float: left;
+                width: 96%;
+                overflow: hidden;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <div id="header">
+
+    </div>
     <div id="sbody">
         <div id="menu">
-            <div style="width: 184px; height: 184px; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,.15); border: 1px solid #ddd;">
-                <div style="width: 176px; height: 176px; padding: 4px;">
-                    <img style="width: 100%; height: 100%; object-fit: cover; " src="./zsources/duck guy.png">
+            <div id="div-pfp-border">
+                <div id="div-pfp">
+                    <img src="./zsources/duck guy.png">
                 </div>
             </div>
-            <div style="text-align: center; margin: 15px auto; font-size: 30px;">joao pedro "lake" libonati</div>
+            <div id="name-text">joao pedro "lake" libonati</div>
             <div class="menu-item"><a href="about me/index.html">&#10068; about me</a></div>
             <div class="menu-item"><a href="art/index.html">&#127912; art</a></div>
             <div class="menu-item"><a href="design/index.html">&#9997; design</a></div>
@@ -90,7 +122,15 @@
 
             function createContent(hasText){
                 if(hasText == false){
-                    text = `T> UM TÍTULO MUUU U UU U UU UUUUUU ITO GRANDE
+                    text = `T> I made an osu!Taiko Hack - hackdetaco
+p> There is more info at <a href="https://github.com/calmylake/hackdetaco">github.com/calmylake/hackdetaco</a>.
+I did it just today, I feel proud of finally doing something from start to finish. 
+But also... I just wanna go sleep...
+
+<img src="https://media.tenor.com/images/61dcf7e4d65440b06c8c901ace9924a6/tenor.gif">
+DATE> 31/08/2020
+
+T> UM TÍTULO MUUU U UU U UU UUUUUU ITO GRANDE
 p> aaaaa 
 hoje eu fiz um site
 construi do zero muleke
@@ -117,7 +157,8 @@ blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahb
 blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
 
 
-DATE> 27/08/2020`;
+DATE> 27/08/2020
+`;
                 }
             
 

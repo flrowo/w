@@ -1,3 +1,6 @@
+const contentText = 
+`
+
 TITLE> finishing the day with some crazy jazz
 p> today i worked some hours on this site, made the taiko progress section and a bunch of other stuff
 
@@ -17,7 +20,7 @@ DATE> 02/09/2020
 TYPE> blog
 
 
-        TITLE> I made an osu!Taiko Hack - hackdetaco
+TITLE> I made an osu!Taiko Hack - hackdetaco
 p> There is more info at <a href="https://github.com/calmylake/hackdetaco">github.com/calmylake/hackdetaco</a>.
 I did it just today, I feel proud of finally doing something from start to finish. 
 But also... I just wanna go sleep...
@@ -53,7 +56,7 @@ DATE> 19/08/2020
 
 
 
-TITLE> pegando o básico [PT-BR]
+TITLE> pegando o básico
 p> 
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/742944950001467492/unknown.png">
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/742946191016198234/unknown.png">
@@ -69,3 +72,4 @@ esse pass tmbm
 TYPE> taiko progress
 DATE> 11/08/2020
 
+`;

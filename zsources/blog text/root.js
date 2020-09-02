@@ -1,6 +1,15 @@
 const contentText = 
 `
 
+
+TITLE> i'm learning how transitions work
+p> animation is so cool, even if i don't like css that much
+the button "back to top" is the learning object
+i can maybe use this for obs transitions or overlays... i wonder if someone will someday hire me as tech helper with obs stuff for streaming
+
+DATE> 02/09/2020
+TYPE> blog
+
 TITLE> finishing the day with some crazy jazz
 p> today i worked some hours on this site, made the taiko progress section and a bunch of other stuff
 

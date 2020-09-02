@@ -11,8 +11,6 @@ let text = null;
 let content = [];
 let allright = false;
 
-
-
 /* ajax vanilla
 
 fetch(new Request('https://parallelum.com.br/fipe/api/v1/carros/marcas', {method: 'GET'}))
@@ -27,11 +25,10 @@ fetch(new Request('https://parallelum.com.br/fipe/api/v1/carros/marcas', {method
 .catch(error => { console.error(error); });
 */
 
-function createContent(hasText, type){
+function createContent(type = "all"){
     console.log("type: "+type);
-    if(hasText == false){
-        text = contentText;
-    }
+
+    text = contentText;
 
 
     content = text.split("TITLE>");
@@ -79,14 +76,21 @@ function createContent(hasText, type){
 
 }
 
-function updateContent(contentType = "all"){
-    $.ajax({url: "./zsources/blog%20text/root.txt", success: function(result){
-        text = result;
-        allright = true;
-        console.log("contentType: "+contentType);
-        createContent(true, contentType);
-    }, error: function(){createContent(false, contentType); console.log("couldn't get the online .txt")}
-    });
+createContent();
+
+var backToTopButton = document.getElementById("backToTop");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
 }
 
-updateContent();
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

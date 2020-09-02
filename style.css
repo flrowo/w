@@ -51,6 +51,8 @@ body{
 .content-item img{
     max-width: 80%;
     margin: 10px 0px;
+    max-height: 300px;
+    object-fit: contain;
 }
 h1{
     margin: 0px;

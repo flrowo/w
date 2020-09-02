@@ -35,6 +35,7 @@ function createContent(hasText, type){
 TITLE> finishing the day with some crazy jazz
 p> today i worked some hours on this site, did the taiko progress section and a bunch of other stuff
 
+<img src="https://i1.sndcdn.com/artworks-000268104230-lt2i6d-t500x500.jpg">
 <a href="https://soundcloud.com/bionicelcor/sleep-walker-eclipse">best song of the day</a>
 <a href="https://soundcloud.com/reisenudongeininaba/sets/def-just-hearing-is-already">playlist 1</a>
 <a href="https://soundcloud.com/reisenudongeininaba/sets/def-favoritas">playlist 2</a>
@@ -43,6 +44,8 @@ i played LoL again after one week? i think?
 and i did some work today and yesterday on the college thingy, i'll search how to say it...
 but... what i've found doesn't apply to what i'm doing with my team. we're doing an academic project for graduation in tecnology... it isn't a monograph or something like that...
 i'll not mess my head up with this thing at 3 AM
+
+edit: and i actually edited the css... so images aren't that large (like 1000px)
 
 DATE> 02/09/2020
 TYPE> blog

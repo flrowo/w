@@ -33,7 +33,7 @@ function createContent(hasText, type){
         text = `
 
 TITLE> finishing the day with some crazy jazz
-p> today i worked some hours on this site, did the taiko progress section and a bunch of other stuff
+p> today i worked some hours on this site, made the taiko progress section and a bunch of other stuff
 
 <img src="https://i1.sndcdn.com/artworks-000268104230-lt2i6d-t500x500.jpg">
 <a href="https://soundcloud.com/bionicelcor/sleep-walker-eclipse">best song of the day</a>

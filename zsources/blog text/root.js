@@ -72,7 +72,7 @@ p>
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/743142929715167292/unknown.png">
 ^ esse pass de 3.28*
 foi meio mal jogado, mas ainda sim é algo que eu não fazia antes
-<a href="https://osu.ppy.sh/beatmapsets/1044372">https://osu.ppy.sh/beatmapsets/1044372</a>
+<a href="https://osu.ppy.sh/beatmapsets/1044372#taiko/2280451">https://osu.ppy.sh/beatmapsets/1044372#taiko/2280451</a>
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/743143371522048061/unknown.png">
 e esse quase fc em uma de 2.97*
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/743146031444787240/unknown.png">

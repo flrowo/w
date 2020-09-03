@@ -25,7 +25,21 @@ fetch(new Request('https://parallelum.com.br/fipe/api/v1/carros/marcas', {method
 .catch(error => { console.error(error); });
 */
 
+let lastCLicked;
+
 function createContent(type = "all"){
+    if(type == lastCLicked) {
+        type = "all";
+        document.getElementById(lastCLicked).style.color = "";
+        lastCLicked = undefined;
+    }
+    
+    if (type != "all") {
+        document.getElementById(type).style.color = "#F00";
+        if (lastCLicked) document.getElementById(lastCLicked).style.color = "";
+        lastCLicked = type;
+    }
+
     console.log("type: "+type);
 
     text = contentText;
@@ -71,7 +85,18 @@ function createContent(type = "all"){
             }
             i++;
         }
+        if(htmlstring.length == 0){
+            let icontent = new Content("There is no content about ", "coming soon...", "00/00/0000", type);
+            htmlstring += `<div class="content-item">
+            <h1>${icontent.title+icontent.type}</h1><br>
+            ${icontent.type} - ${icontent.date}
+            <hr>
+            ${icontent.text}
+            <br><br>
+            </div>`;
+        }
         document.getElementById("content").innerHTML = htmlstring.trim();
+
     })();
 
 }

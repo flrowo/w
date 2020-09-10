@@ -65,7 +65,7 @@ DATE> 19/08/2020
 
 
 
-TITLE> pegando o básico
+TITLE> pegando o básico 1500pp
 p> 
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/742944950001467492/unknown.png">
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/742946191016198234/unknown.png">

@@ -2,6 +2,10 @@ const contentText =
 `
 TITLE> 2000pp
 p> 
+<img src="https://media.discordapp.net/attachments/532668537723158549/648733158052724746/server_icon.gif">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/751430322490703946/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/751430540380471326/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/751430898523701248/unknown.png">
 DATE> 04/09/2020
 TYPE> taiko progress
 LANG> pt

@@ -1,6 +1,10 @@
 const contentText = 
 `
-
+TITLE> 2000pp
+p> 
+DATE> 04/09/2020
+TYPE> taiko progress
+LANG> pt
 
 TITLE> i'm learning how transitions work
 p> animation is so cool, even if i don't like css that much
@@ -9,6 +13,7 @@ i can maybe use this for obs transitions or overlays... i wonder if someone will
 
 DATE> 02/09/2020
 TYPE> blog
+LANG> en
 
 TITLE> finishing the day with some crazy jazz
 p> today i worked some hours on this site, made the taiko progress section and a bunch of other stuff
@@ -27,6 +32,7 @@ edit: and i actually edited the css... so images aren't that large (like 1000px)
 
 DATE> 02/09/2020
 TYPE> blog
+LANG> en
 
 
 TITLE> I made an osu!Taiko Hack - hackdetaco
@@ -38,6 +44,7 @@ But also... I just wanna go sleep...
 DATE> 31/08/2020
 
 TYPE> tools
+LANG> en
 
 TITLE> UM TÍTULO MUUU U UU U UU UUUUUU ITO GRANDE
 p> aaaaa 
@@ -51,6 +58,7 @@ aaaaaaaaaa
 DATE> 28/08/2020
 
 TYPE> testing
+LANG> pt
 
 TITLE> primeira play de 100pp
 p> 
@@ -62,6 +70,7 @@ primeira play de 100pp
 
 TYPE> taiko progress
 DATE> 19/08/2020
+LANG> pt
 
 
 
@@ -80,5 +89,6 @@ esse pass tmbm
 
 TYPE> taiko progress
 DATE> 11/08/2020
+LANG> pt
 
 `;

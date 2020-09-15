@@ -59,6 +59,9 @@ blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahb
 <img style="margin: 30px;" src="https://a.ppy.sh/4689256_1596477920.gif">
 blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah blah blahblah 
 aaaaaaaaaa
+
+edit (15/09/2020): aparentemente essa imagem fica mudando dependendo da foto que eu coloco de perfil no <a href="https://osu.ppy.sh/users/4689256">osu!</a>
+
 DATE> 28/08/2020
 
 TYPE> testing

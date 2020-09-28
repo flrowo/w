@@ -1,16 +1,43 @@
 const contentText = 
 `
 
+TITLE> rework de dificuldade do taiko
+p>
+ganhei 150pp enquanto muita gente perdeu muito mais
+
+antes:
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/756914952530559078/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/756915103789481994/unknown.png">
+
+depois:
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/759902381105217557/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/759900472177328128/unknown.png">
+
+olha como surgiram plays no score
+a play em <a href="https://osu.ppy.sh/beatmapsets/1010280#taiko/2114848">Kageyama Shota - Sentou! Denshousha Higana (Muzukashii)</a> acabou subindo 11pp, sendo que era #9 melhor play, isso é muita coisa
+
+eu ganhei pp e parece que a maioria perdeu bastante pp, por isso acabei subindo de 18k pra 10k
+isso provavelmente é pq muita gente tinha plays de farm, e agora essas plays não valem nada
+como por exemplo as plays em <a href="https://osu.ppy.sh/beatmapsets/928431#taiko/1939224">Nog - Aether Ritual (Ritual Oni)</a>
+
+DATE> 24/09/2020
+LANG> pt
+TYPE> taiko progress
+
 TITLE> peace
 p>
-lineart
-<a href="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png"><img src="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png?width=400&height=262"></a>
-coloring test 1
-<a href="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png"><img src="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png?width=400&height=225"></a>
-coloring test 2
-<a href="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png"><img src="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png?width=400&height=286"></a>
-final
-<a href="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png"><img src="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png?width=400&height=286"></a>
+lineart<a href="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png">
+<img src="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png?width=400&height=262">
+</a>
+coloring test 1<a href="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png">
+<img src="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png?width=400&height=225">
+</a>
+coloring test 2<a href="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png">
+<img src="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png?width=400&height=286">
+</a>
+final<a href="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png">
+<img src="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png?width=400&height=286">
+</a>
 <a href="https://twitter.com/key_999/status/1279252663549325312">reference i used</a>
 DATE> 22/09/2020
 TYPE> art

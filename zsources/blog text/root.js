@@ -16,6 +16,9 @@ depois:
 olha como surgiram plays no score
 a play em <a href="https://osu.ppy.sh/beatmapsets/1010280#taiko/2114848">Kageyama Shota - Sentou! Denshousha Higana (Muzukashii)</a> acabou subindo 11pp, sendo que era #9 melhor play, isso é muita coisa
 
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/760732733935845416/unknown.png">
+Sentou! Denshousha Higana (Muzukashii) com dificuldade de 2.84*, atualmente tem 3.29*
+
 eu ganhei pp e parece que a maioria perdeu bastante pp, por isso acabei subindo de 18k pra 10k
 isso provavelmente é pq muita gente tinha plays de farm, e agora essas plays não valem nada
 como por exemplo as plays em <a href="https://osu.ppy.sh/beatmapsets/928431#taiko/1939224">Nog - Aether Ritual (Ritual Oni)</a>

@@ -1,6 +1,21 @@
 const contentText = 
 `
 
+TITLE> my solution for the FizzBuzz test
+p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">this video</a>
+
+the first button shows what i have done in 2-3 minutes, and the other one shows a better version of it.
+
+<a href="codes/FizzBuzz.html">here</a> you can see the result
+
+what i noticed about my coding style is that i like to think ahead into the future. i was asking myself if i should simplify the code a little more and i was worried about someone trying to understand my code and if to change something was easy to do. that's why i tried to make a code fast and after that works i tried to make it better.
+
+at the same time, you can see with the first try that i did not output exactly what was proposed. i output "3" instead of "Fizz", "5" instead of "Buzz" and "3 e 5" instead of "FizzBuzz". that's something i could work on from now on.
+
+DATE> 13/10/2020
+LANG> en
+TYPE> blog
+
 TITLE> rework de dificuldade do taiko
 p>
 ganhei 150pp enquanto muita gente perdeu muito mais

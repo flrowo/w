@@ -8,7 +8,7 @@ check the post <a href="https://osu.ppy.sh/community/forums/topics/1163245">here
 
 DATE> 16/10/2020
 LANG> en
-TYPE> blog
+TYPE> taiko
 
 TITLE> let me present you: SCREEN DATA CAPTURE DESIGN
 p> data capture is something really present to us, internet users, nowadays.
@@ -88,7 +88,7 @@ como por exemplo as plays em <a href="https://osu.ppy.sh/beatmapsets/928431#taik
 
 DATE> 24/09/2020
 LANG> pt
-TYPE> taiko progress
+TYPE> taiko
 
 TITLE> peace
 p>
@@ -116,7 +116,7 @@ p>
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/751430540380471326/unknown.png">
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/751430898523701248/unknown.png">
 DATE> 04/09/2020
-TYPE> taiko progress
+TYPE> taiko
 LANG> pt
 
 TITLE> i'm learning how transitions work
@@ -129,7 +129,7 @@ TYPE> blog
 LANG> en
 
 TITLE> finishing the day with some crazy jazz
-p> today i worked some hours on this site, made the taiko progress section and a bunch of other stuff
+p> today i worked some hours on this site, made the taiko section and a bunch of other stuff
 
 <img src="https://i1.sndcdn.com/artworks-000268104230-lt2i6d-t500x500.jpg">
 <a href="https://soundcloud.com/bionicelcor/sleep-walker-eclipse">best song of the day</a>
@@ -184,7 +184,7 @@ primeira play de 100pp
 1 miss
 99.36% acc
 
-TYPE> taiko progress
+TYPE> taiko
 DATE> 19/08/2020
 LANG> pt
 
@@ -203,7 +203,7 @@ e esse quase fc em uma de 2.97*
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/743146031444787240/unknown.png">
 esse pass tmbm
 
-TYPE> taiko progress
+TYPE> taiko
 DATE> 11/08/2020
 LANG> pt
 

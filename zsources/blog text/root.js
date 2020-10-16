@@ -1,8 +1,49 @@
 const contentText = 
 `
 
+TITLE> i posted on osu!taiko's community forums about spinners preventing FCs
+p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, even if you manage to full combo it, spinners make the game tell you that you did not FC.
+
+check the post <a href="https://osu.ppy.sh/community/forums/topics/1163245">here</a> for more info
+
+DATE> 16/10/2020
+LANG> en
+TYPE> blog
+
+TITLE> let me present you: SCREEN DATA CAPTURE DESIGN
+p> data capture is something really present to us, internet users, nowadays.
+
+before internet, it was so hard to get info about everyone that used something you created, but nowadays is simple, you can store if someone clicked a button or something like that if you know a bit of social media marketing + web development or equivalent.
+
+in the game osu! you have a pretty good example of this:
+
+<img src="https://cdn.discordapp.com/attachments/219948537754943489/766514897630003250/taiko_screen.png">
+
+but let's simplify that:
+
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/766517343730794526/unknown.png">
+
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/766517904362438676/unknown.png">
+
+here (in purple) we have the score section. there you can click to see more details about a score. clicking you go to this screen:
+
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/766521204194279434/unknown.png">
+
+here you have the back button on the left and the watch button on the right. the design of the screens here is in a way that the user can't miss click the WATCH button to watch the replay without going from the left to the right of the screen.
+
+that's something that mobile apps and webapps aren't doing at all, even though they want to get information about where the user is heading at towards the app usage path.
+
+i think we should have a design that should be simple and intuitive, but at the same time, prevent miss clicks from the user so they can have a better experience with the app and so apps can track better their users.  
+
+DATE> 16/10/2020 
+LANG> en
+TYPE> design
+
 TITLE> my solution for the FizzBuzz test
-p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">this video</a>
+p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">this video
+
+<img src="https://i.ytimg.com/vi/QPZ0pIK_wsc/maxresdefault.jpg">
+</a>
 
 the first button shows what i have done in 2-3 minutes, and the other one shows a better version of it.
 
@@ -15,6 +56,13 @@ at the same time, you can see with the first try that i did not output exactly w
 DATE> 13/10/2020
 LANG> en
 TYPE> blog
+
+TITLE> dunno #1
+p> <img src="https://media.discordapp.net/attachments/724993945633030197/762897892603199488/export.png?width=400&height=286">
+
+DATE> 6/10/2020
+LANG> en
+TYPE> art
 
 TITLE> rework de dificuldade do taiko
 p>
@@ -45,17 +93,17 @@ TYPE> taiko progress
 TITLE> peace
 p>
 lineart<a href="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png">
-<img src="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png?width=400&height=262">
-</a>
+<img src="https://media.discordapp.net/attachments/430201054173462548/757695073780760656/unknown.png?width=400&height=262"></a>
+
 coloring test 1<a href="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png">
-<img src="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png?width=400&height=225">
-</a>
+<img src="https://media.discordapp.net/attachments/430201054173462548/757695061470216261/unknown.png?width=400&height=225"></a>
+
 coloring test 2<a href="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png">
-<img src="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png?width=400&height=286">
-</a>
+<img src="https://media.discordapp.net/attachments/430201054173462548/757710672367714404/unknown.png?width=400&height=286"></a>
+
 final<a href="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png">
-<img src="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png?width=400&height=286">
-</a>
+<img src="https://media.discordapp.net/attachments/724993945633030197/757729747953385472/2020_09_20.png?width=400&height=286"></a>
+
 <a href="https://twitter.com/key_999/status/1279252663549325312">reference i used</a>
 DATE> 22/09/2020
 TYPE> art

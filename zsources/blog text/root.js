@@ -1,5 +1,15 @@
 const contentText = 
 `
+TITLE> i made the dropped minecraft item motion with just C# code
+p> i think what i like about programming is making abstract challenges come true.
+there is <a href="https://calmylake.github.io/w/codes/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
+but here is a review if you can't run WebGL:
+<img src="https://calmylake.github.io/w/codes/minecraft-floating-item/preview.gif"></img>
+
+
+DATE> 11/05/2020
+LANG> en
+TYPE> development
 
 TITLE> i posted on osu!taiko's community forums about spinners preventing FCs
 p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, even if you manage to full combo it, spinners make the game tell you that you did not FC.
@@ -156,7 +166,7 @@ But also... I just wanna go sleep...
 <img src="https://media.tenor.com/images/61dcf7e4d65440b06c8c901ace9924a6/tenor.gif">
 DATE> 31/08/2020
 
-TYPE> tools
+TYPE> development
 LANG> en
 
 TITLE> UM TÍTULO MUUU U UU U UU UUUUUU ITO GRANDE

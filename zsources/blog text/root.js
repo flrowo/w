@@ -40,7 +40,7 @@ LANG> en
 TYPE> design
 
 TITLE> my solution for the FizzBuzz test
-p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">this video
+p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">this video by Tom Scott
 
 <img src="https://i.ytimg.com/vi/QPZ0pIK_wsc/maxresdefault.jpg">
 </a>

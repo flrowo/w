@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>anime list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<div class="header">
+		<button class="btn" onclick="window.location = '../index.html'">back</button>
+		<button class="btn" onclick="javascript: changeCateg(0, initialList);">to watch</button>
+		<button class="btn" onclick="javascript: changeCateg(1, initialList);">watched</button>
+		<button class="btn" onclick="javascript: showFilter();">filter</button>
+		<div class="filter">
+			<div class="filter-content">
+				<h1>filter</h1>
+				<button class="btn" onclick="">cres &#9195;</button>
+				<button class="btn" onclick="">desc &#9196;</button><br>
+				<button class="btn" onclick="javascript: filter(0, 1, initialList);">old</button>
+				<button class="btn" onclick="javascript: filter(0, 0, initialList);">recent</button><br>
+				<button class="btn" onclick="javascript: filter(1, 1, initialList);">from a to z</button>
+				<button class="btn" onclick="javascript: filter(1, 0, initialList);">from z to a</button><br>
+				<button class="btn" onclick="javascript: filter(2, 1, initialList);">low score</button>
+				<button class="btn" onclick="javascript: filter(2, 0, initialList);">high score</button><br>
+			</div>
+		</div>
+		<!--<a style="cursor: auto; color: rgba(255,255,255,0.4); text-align: center; font-size: 13px;">(๑˃̵ᴗ˂̵)و</a>-->
+	</div>
+    <div class="sbody">
+		<span id="animelist"></span>
+	</div>
+	<div class="footer">
+		<p style="text-align: center; font-size: 13px;">(๑˃̵ᴗ˂̵)و last update: <span id="last_update"></span></p>
+	</div>
+	
+	<!--<script type="text/javascript" src="https://raw.githubusercontent.com/maylake/site/master/personal/anime/animes.js"></script>-->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		var animes;
+		$.ajax({
+			async: false,
+			url: 'https://raw.githubusercontent.com/maylake/db/master/app/animes.js',
+			type: 'GET',
+			dataType: 'text',
+			success: (data) => {
+				//console.log(data);
+				eval(data);
+				console.log(animes);
+			},
+			error: (XMLHttpRequest, textStatus, errorThrown) => { 
+				alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+			}
+		});
+
+	</script>
+	<script type="text/javascript" src="https://raw.githubusercontent.com/calmylake/code_database/master/jsfunctions/subtractDays.js"></script>
+	<script>
+	
+	$(document).ready($.ajax({
+		url: "https://api.github.com/repos/96lake/db/commits",
+		dataType: "JSON",
+		success: function(data){
+			var datetime = data[0].commit.author.date;
+			var time = datetime.trim().split("T")[1].split("Z")[0].trim();
+			var date = datetime.trim().split("T")[0];
+			document.getElementById('last_update').innerHTML = date.replace(/-/g,"/") + " "+ time + " (UTC)";
+		}, error: function(jqXHR, textStatus, errorThrown){ alert("error"); }
+	}));
+	
+	var page = 0;
+	var initialList = animes;
+	var animelist = document.getElementById('animelist');
+	var mem = 0;
+	//filter.style.display = "none";
+	function filter(n, order, list){
+		switch (n){
+		//sort by the finish date
+		case 0:
+			if (order) {
+				list[page].sort(function(a, b) {
+					var nameA = a.end;
+					var nameB = b.end;
+					if (nameA < nameB) {return -1;}
+					if (nameA > nameB) {return 1;}
+					return 0;
+				});
+			} else {
+				list[page].sort(function(a, b) {
+					var nameA = a.end;
+					var nameB = b.end;
+					if (nameB < nameA) {return -1;}
+					if (nameB > nameA) {return 1;}
+					return 0;
+				});
+			}
+			changeCateg(page, animes);
+			break;
+			
+		//sort alphabeticaly
+		case 1:
+			if (order) {
+				list[page].sort(function(a, b) {
+					var nameA = a.name.toUpperCase();
+					var nameB = b.name.toUpperCase();
+					if (nameA < nameB) {return -1;}
+					if (nameA > nameB) {return 1;}
+					return 0;
+				});
+			} else {
+				list[page].sort(function(a, b) {
+					var nameA = a.name.toUpperCase();
+					var nameB = b.name.toUpperCase();
+					if (nameB < nameA) {return -1;}
+					if (nameB > nameA) {return 1;}
+					return 0;
+				});
+			}
+			changeCateg(page, animes);
+			break;
+			
+		//sort by score
+		case 2:
+			if (order) {
+				list[page].sort(function(a, b) {
+					var nameA = parseFloat(a.score);
+					var nameB = parseFloat(b.score);
+					if (nameA < nameB) {return -1;}
+					if (nameA > nameB) {return 1;}
+					return 0;
+				});
+			} else {
+				list[page].sort(function(a, b) {
+					var nameA = parseFloat(a.score);
+					var nameB = parseFloat(b.score);
+					if (nameB < nameA) {return -1;}
+					if (nameB > nameA) {return 1;}
+					return 0;
+				});
+			}
+			changeCateg(page, animes);
+			break;
+			
+		}
+		return;
+	}
+	
+	function changeCateg(boo, list){
+		var htmlstring = "";
+		
+		function str_animeimgdiv (i) {return ""+
+			"<div class='animeimg'>"+
+				'<a href="'+list[boo][i].link+'"><img src="'+list[boo][i].img+'"></a>'+
+			'</div>';
+		}
+		
+		if (!boo){
+			//initial state of the page (to watch)
+			mem = 0;
+			htmlstring += '';
+			
+			var i = 0;
+			while(i < list[boo].length){
+				htmlstring += ''+
+				"<div class='animediv'>"+
+					str_animeimgdiv(i)+
+					
+					'<div class="animeinfo" style="line-height: 95px;">'+
+						'<h1 class="animetitle">'+list[boo][i].name+(list[boo][i].media !== undefined ? ' ('+list[boo][i].media.toUpperCase()+') ' : '')+'</h1>'+
+					'</div>'+
+				'</div>';
+				i++;
+			}
+			
+			htmlstring += '';
+			
+			animelist.innerHTML = htmlstring;
+			
+			page = 0;
+			
+		} else if (boo == 1){
+			//watched
+			mem = 1;
+			htmlstring += '';
+			
+			var i = 0;
+			var ndays;
+			var item;
+			while(i < list[boo].length){
+				item = list[boo][i];
+				ndays = subtractDays(item.start[2],item.start[1],item.start[0], item.end[2],item.end[1],item.end[0]);
+				if (isNaN(ndays)){
+					ndays = "some";
+				}
+				htmlstring += ''+
+				"<div class='animediv'>"+
+					str_animeimgdiv(i)+
+					'<div class="animeinfo">'+
+						'<h1 class="animetitle">'+item.name+(item.media !== undefined ? ' ('+item.media.toUpperCase()+') ' : '')+'</h1>'+
+						'<p class="comment "'+(item.comment != undefined ? '>'+item.comment : ">")+'</p>'+
+					'</div>'+
+					'<div class="animedata">'+
+						'<p>start: '+item.start[0]+'/'+item.start[1]+'/'+item.start[2]+'</p>'+
+						'<p>finish: '+item.end[0]+'/'+item.end[1]+'/'+item.end[2]+'</p>'+
+						'<p>'+ndays+' '+(ndays == 1 ? 'day' : 'days')+' - '+item.score+'</p>'+
+						'<span class="span_readmore"></span>'+
+					'</div>'+
+				'</div>';
+				i++;
+			}
+			
+			htmlstring += '';
+			
+			animelist.innerHTML = htmlstring;
+
+			(function(){
+				var i = 0;
+				var els = document.getElementsByClassName("animediv");
+				while(els.length > i){
+					if(els[i].clientHeight < els[i].scrollHeight){
+						document.getElementsByClassName("span_readmore")[i].innerHTML = '<p class="readmore" onclick="readmore('+i+')">'+'▼ Read more'+'</p>';
+					}
+					i++;
+				}
+			})();
+
+			page = 1;
+		}
+	}
+	
+	// would be a lot better make two separate filters for page 0 and page 1...
+	var elfilter = document.getElementsByClassName("filter")[0];
+	function showFilter(){
+		//click on "filter"
+		var i = 0;
+		if(page == 0){
+			var i = 0;
+			while(i < 8){
+				if (i != 4 && i != 5){
+					elfilter.getElementsByClassName('btn')[i].style.cursor = 'not-allowed';
+				}
+				i++;
+			}
+		} else if(page == 1){
+			while(i < 8){
+				elfilter.getElementsByClassName('btn')[i].style.cursor = 'pointer';
+				i++;
+			}
+		}
+		elfilter.style.display = "block";
+		window.onclick = function(event) {
+			//when click with filter open
+			if (event.target == elfilter) {
+				//when click outside filter
+				elfilter.style.display = "none";
+				window.onclick == null;
+			}
+			else{
+				//when click inside filter
+			}
+		}
+	}
+	
+	
+	var readmore = (i) => {
+		
+		var el = document.getElementsByClassName('animediv')[i];
+		var subel = document.getElementsByClassName('span_readmore')[i];
+		if (el.scrollHeight < el.style.height) {
+			return;
+		}
+		if (isNaN(parseInt(el.style.height))) el.defaultHeight = el.style.height; 
+
+		if (parseInt(el.style.height) == el.scrollHeight){
+			el.style.height = el.defaultHeight;
+			subel.children[0].innerHTML = "▼ Read more";
+		} else {
+			el.style.height = el.scrollHeight+'px';
+			subel.children[0].innerHTML = "▲ Read less";
+		}
+	}
+
+	var modal = document.getElementsByClassName("modal");
+	
+	function readLess(x){
+		modal[x].style.display = "none";
+	}
+	animes[0].sort(function(a, b) {
+		var nameA = a.name.toUpperCase();
+		var nameB = b.name.toUpperCase();
+		if (nameA < nameB) {return -1;}
+		if (nameA > nameB) {return 1;}
+		return 0;
+	});
+	animes[1].sort(function(a, b) {
+		var nameA = a.end;
+		var nameB = b.end;
+		if (nameB < nameA) {return -1;}
+		if (nameB > nameA) {return 1;}
+		return 0;
+	});
+	changeCateg(0, initialList);
+	var boo = 0;
+
+	</script>
+	
+  </body>
+</html>
+

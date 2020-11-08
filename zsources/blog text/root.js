@@ -2,9 +2,9 @@ const contentText =
 `
 TITLE> i made the dropped minecraft item motion with just C# code
 p> i think what i like about programming is making abstract challenges come true.
-there is <a href="https://calmylake.github.io/w/codes/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
+there is <a href="https://calmylake.github.io/w/other/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
 but here is a review if you can't run WebGL:
-<img src="https://calmylake.github.io/w/codes/minecraft-floating-item/preview.gif"></img>
+<img src="https://calmylake.github.io/w/other/minecraft-floating-item/preview.gif"></img>
 
 
 DATE> 11/05/2020
@@ -57,7 +57,7 @@ p> today i worked on a test mentioned in <a href="https://youtu.be/QPZ0pIK_wsc">
 
 the first button shows what i have done in 2-3 minutes, and the other one shows a better version of it.
 
-<a href="codes/FizzBuzz.html">here</a> you can see the result
+<a href="other/FizzBuzz.html">here</a> you can see the result
 
 what i noticed about my coding style is that i like to think ahead into the future. i was asking myself if i should simplify the code a little more and i was worried about someone trying to understand my code and if to change something was easy to do. that's why i tried to make a code fast and after that works i tried to make it better.
 

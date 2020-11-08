@@ -9,7 +9,7 @@ but here is a review if you can't run WebGL:
 
 DATE> 11/05/2020
 LANG> en
-TYPE> development
+TYPE> development & games
 
 TITLE> i posted on osu!taiko's community forums about spinners preventing FCs
 p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, even if you manage to full combo it, spinners make the game tell you that you did not FC.

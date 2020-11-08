@@ -74,7 +74,7 @@ function createContent(type = "all"){
         }
         while(i < actContent.length){
             
-            if(allContent || actContent[i].type == type){
+            if(allContent || actContent[i].type.includes(type)){
                 htmlstring += `<div class="content-item">
                 <h1>${actContent[i].title}</h1><br>
                 ${actContent[i].type} - ${actContent[i].date}

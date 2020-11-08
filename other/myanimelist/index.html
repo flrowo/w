@@ -31,12 +31,25 @@
 		<span id="animelist"></span>
 	</div>
 	<div class="footer">
-		<p style="text-align: center; font-size: 13px;">(๑˃̵ᴗ˂̵)و last update: <span id="last_update"></span></p>
+		<p style="text-align: center; font-size: 13px;">(๑˃̵ᴗ˂̵)و last update: <span id="last_update">loading...</span></p>
 	</div>
 	
-	<!--<script type="text/javascript" src="https://raw.githubusercontent.com/maylake/site/master/personal/anime/animes.js"></script>-->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
+		function subtractDays(d1, m1, y1, d2, m2, y2) {
+			date1 = new Date(y1, m1, d1);
+			date2 = new Date(y2, m2, d2);
+			
+			var date1_ms = date1.getTime();
+			var date2_ms = date2.getTime();
+			
+			var oneDay=1000*60*60*24;
+			
+			var dif_ms = date2_ms - date1_ms;
+			
+			return Math.round(dif_ms/oneDay); 
+		}
+
 		var animes;
 		$.ajax({
 			async: false,
@@ -52,20 +65,22 @@
 				alert("Status: " + textStatus); alert("Error: " + errorThrown); 
 			}
 		});
-
 	</script>
-	<script type="text/javascript" src="https://raw.githubusercontent.com/calmylake/code_database/master/jsfunctions/subtractDays.js"></script>
+	<!--<script type="text/javascript" src="https://raw.githubusercontent.com/calmylake/code_database/master/jsfunctions/subtractDays.js"></script>-->
 	<script>
 	
 	$(document).ready($.ajax({
-		url: "https://api.github.com/repos/96lake/db/commits",
+		url: "https://api.github.com/repos/calmylake/db/commits",
 		dataType: "JSON",
 		success: function(data){
 			var datetime = data[0].commit.author.date;
 			var time = datetime.trim().split("T")[1].split("Z")[0].trim();
 			var date = datetime.trim().split("T")[0];
 			document.getElementById('last_update').innerHTML = date.replace(/-/g,"/") + " "+ time + " (UTC)";
-		}, error: function(jqXHR, textStatus, errorThrown){ alert("error"); }
+		}, error: function(jqXHR, textStatus, errorThrown){ 
+			document.getElementById('last_update').innerHTML = "error :/";
+			console.log("error on getting last update date...");
+		}
 	}));
 	
 	var page = 0;

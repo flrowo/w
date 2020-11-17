@@ -96,6 +96,17 @@ a{
     color: #000;
 }
 
+#copyDiscord{
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+}
+
+#copyDiscord::selection{
+    color: #0955e0;
+    background-color: unset;
+}
+
 /* when width < 1100px */
 @media (max-width:1100px) {
     body{

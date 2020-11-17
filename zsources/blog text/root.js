@@ -1,5 +1,18 @@
 const contentText = 
 `
+TITLE> reached 2500pp -> top 10k and 200 BR
+p> i'm starting to be able to do 1/2 200bpm streams.
+for example, <a href="https://osu.ppy.sh/b/2462306">maps like this</a>. even though that beatmap is 136 bpm, the notes are 1/3, which makes it the same as 204 bpm with 1/2 notes.
+
+i'm starting also to be able to do triple patterns a lot more consistently.
+and i started to think about changing my playstyle to 4 finger, but that's not gonna happen, i will be playing taiko the way i think is the best for fun! that is 2 finger full alt.
+
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/775379464926396436/unknown.png">
+
+DATE> 09/11/2020
+LANG> en
+TYPE> taiko
+
 TITLE> i made the dropped minecraft item motion with just C# code
 p> i think what i like about programming is making abstract challenges come true.
 there is <a href="https://calmylake.github.io/w/other/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
@@ -7,7 +20,7 @@ but here is a review if you can't run WebGL:
 <img src="https://calmylake.github.io/w/other/minecraft-floating-item/preview.gif"></img>
 
 
-DATE> 11/05/2020
+DATE> 05/11/2020
 LANG> en
 TYPE> development & games
 

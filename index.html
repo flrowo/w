@@ -47,7 +47,7 @@
                 <div class="menu-item"><a href="https://www.youtube.com/channel/UCUiaHldlB2GY5ovjRE6KFUQ">Youtube channel</a></div>
                 <div class="menu-item"><a href="https://www.youtube.com/channel/UCnB1PWlPKeU_f9PmAb4ymAw">old Youtube channel</a></div>
                 <div class="menu-item"><a href="https://steamcommunity.com/profiles/76561198273276306">Steam</a></div>
-                <div class="menu-item">Discord: 0173#7029</div>
+                <div class="menu-item">Discord: <a id="copyDiscord" onclick="clickToCopy(this);">0173#7029</a></div>
                 <div class="menu-item"><a href="https://osu.ppy.sh/u/4689256">osu!</a></div>
                 <div class="menu-item"><a href="https://github.com/calmylake">Github</a></div>
             </div>
@@ -60,6 +60,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="./content.js"></script>
         
+        <script>
+            function clickToCopy(el) {
+            let range = document.createRange();
+            range.selectNode(el);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+                alert("copied the discord tag to clipboard!");
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+        };
+        </script>
+
     </div>
 </body>
 </html>

@@ -1,5 +1,13 @@
 const contentText = 
 `
+TITLE> first 150pp play and tournaments
+p> i didn't say here before, but i was playing on a 2v2 taiko tournament (<a href="https://gtsosu.com/bgts/home">BGTS</a>) with <a href="https://osu.ppy.sh/users/12371820">pls</a>. we got through group stage, but we lost to romania, so we are in the losers bracket
+BUT... at night, i got my first 150pp play on a song i like a lot:
+<a href="https://osu.ppy.sh/beatmapsets/1251607#taiko/2602571">Yoru Naku Usagi wa Yume o Miru - UNDEAD CORPORATION<img src="https://cdn.discordapp.com/attachments/742944663996203120/790054024912830474/unknown.png"></a>
+DATE> 19/12/2020
+LANG> en
+TYPE> taiko
+
 TITLE> reached 2500pp -> top 10k and 200 BR
 p> i'm starting to be able to do 1/2 200bpm streams.
 for example, <a href="https://osu.ppy.sh/b/2462306">maps like this</a>. even though that beatmap is 136 bpm, the notes are 1/3, which makes it the same as 204 bpm with 1/2 notes.
@@ -30,6 +38,12 @@ p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, ev
 check the post <a href="https://osu.ppy.sh/community/forums/topics/1163245">here</a> for more info
 
 DATE> 16/10/2020
+LANG> en
+TYPE> taiko
+
+TITLE> personal objective for taiko
+p> <a href="https://osu.ppy.sh/b/1619708">monolithize phases - paraoka feat. haru*nya<img src=https://cdn.discordapp.com/attachments/742944663996203120/766396643745595442/unknown.png></a>
+DATE> 15/10/2020
 LANG> en
 TYPE> taiko
 

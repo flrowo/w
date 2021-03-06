@@ -1,5 +1,89 @@
 const contentText = 
 `
+TITLE> tetra pak package
+p> (no content yet)
+DATE> ??/03/2021
+LANG> en
+TYPE> art, design and blog
+
+TITLE> chair
+p> (no content yet)
+DATE> ??/03/2021
+LANG> en
+TYPE> art, design and blog
+
+TITLE> rubber
+p> (no content yet)
+DATE> ??/03/2021
+LANG> en
+TYPE> art, design and blog
+
+TITLE> training sketches
+p> (no content yet)
+DATE> ??/03/2021
+LANG> en
+TYPE> art, design and blog
+
+TITLE> SMURFando feat. Troc
+p> from 23/06/2020. the video is in portuguese. i think this video is one of my most well edited videos ever, even if the editing is simple, it is funny and has a good format both in time and in audio and video quality.
+
+<iframe width="80%" height="300" src="https://www.youtube.com/embed/k7gJeOWcCiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+DATE> 06/03/2021
+LANG> en
+TYPE> video editing
+
+TITLE> first A on taiko
+p>
+pp progress
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/815735835096907776/unknown.png">
+as we are on march 1st and i still didn't reach 3,5k pp, i'm doing an update so we can have a more accurate tracking
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/815736681415835648/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/815736780011208744/unknown.png">
+i'm getting better at 1/4 patterns, but i just cannot do 1/4 streams at all, sometimes i'm able to but just when i get lucky, that's probably my next step, and it feels like i'm relearning 1/2 streams like 5-6 months ago.
+
+turfmastaz
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/815737259890180137/unknown.png">
+i love this song so much i tried to make the most fun and consistently difficult map i could. let's see if i can play this in a few (years?? months please?)
+DATE> 01/03/2021
+LANG> en
+TYPE> taiko
+
+TITLE> first pass on a 5* map
+p> no accuracy but fast fingers day made it be real
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/802651371819499520/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/817625921405583390/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/802651522374696991/unknown.png">
+and this one too, on the same day
+DATE> 23/01/2021
+LANG> en
+TYPE> taiko
+
+TITLE> S on a 4* map
+p> <img src="https://cdn.discordapp.com/attachments/742944663996203120/800924843813896202/2Q.png">
+<a href="https://osu.ppy.sh/beatmaps/2348435">map link</a>
+DATE> 19/01/2021
+LANG> en
+TYPE> taiko
+
+TITLE> understanding the complex taiko: 3000pp
+p> <a href="https://osu.ppy.sh/users/4689256"><img src="https://media.discordapp.net/attachments/742944663996203120/799401957826756618/unknown.png"></a>
+<a href=https://osu.ppy.sh/beatmapsets/1345653 ><img src="https://media.discordapp.net/attachments/742944663996203120/799402078963105802/unknown.png"></a>
+i finished the beta version of my first beatmap <a href="https://osu.ppy.sh/beatmapsets/1345653" >ayako saso - dodge life</a>
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/799402345003483186/unknown.png">
+i'm starting to play the "real taiko" now... i mean, i can play (getting like 90%) things like <a href="https://osu.ppy.sh/b/2661437" > Sewerslvt - Yandere Complex [Oni] </a> and <a href="https://osu.ppy.sh/b/1320778" >m-flo loves CHEMISTRY - Astrosexy [Cosmos]</a> that are super consistent maps on density
+for example, yandere complex's oni has a lot of 1/2s with some triples between, but that's an oni level, so you get a map with only 1/2s and triples with really hard patterns, and they won't repeat at all apparently...
+the other one, we got no patterns at all, both for note color and note frequency... so you got something like this kddkd kdkk kkd dkdkk dk d dkdkkkd kkddkdk kkkdd dkd dd kkdkd kkd and i can get 90-93% accuracy consistently on this type of maps
+and these examples are consistent maps that truly show your capacity at getting through a random beatmap style at low 4* maps, so basically i'm getting 90-95% on low 4 stars maps, and these have a lot of 1/4s training so with them i can get ready for 5* maps. and i think 5* (or high 4*) are just 4* but faster and with streams longer than 10 notes sometimes
+meaning i need to get consistent at reading 1/4 streams for some seconds, like in the picture below even if the bpm is 128
+<a href="https://osu.ppy.sh/b/1331624" >IOSYS - Endless Tewi-ma Park [Oni]</a>
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/799419934530207754/unknown.png" >
+and to be honest... that's what i want for taiko, to be able to read 1/4 streams for eternity
+those are my thoughts for the future now
+
+DATE> 14/01/2021
+LANG> en
+TYPE> taiko
+
 TITLE> first 150pp play and tournaments
 p> i didn't say here before, but i was playing on a 2v2 taiko tournament (<a href="https://gtsosu.com/bgts/home">BGTS</a>) with <a href="https://osu.ppy.sh/users/12371820">pls</a>. we got through group stage, but we lost to romania, so we are in the losers bracket
 BUT... at night, i got my first 150pp play on a song i like a lot:

@@ -32,7 +32,7 @@ DATE> 06/03/2021
 LANG> en
 TYPE> video editing
 
-TITLE> first A on taiko
+TITLE> first 5* A on taiko + mapping updates
 p>
 pp progress
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/815735835096907776/unknown.png">
@@ -59,7 +59,8 @@ LANG> en
 TYPE> taiko
 
 TITLE> S on a 4* map
-p> <img src="https://cdn.discordapp.com/attachments/742944663996203120/800924843813896202/2Q.png">
+p> this is my first S on a 4 stars map and top play at the moment
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/800924843813896202/2Q.png">
 <a href="https://osu.ppy.sh/beatmaps/2348435">map link</a>
 DATE> 19/01/2021
 LANG> en

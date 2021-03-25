@@ -1,10 +1,6 @@
 const contentText = 
 `
-TITLE> tetra pak package
-p> (no content yet)
-DATE> ??/03/2021
-LANG> en
-TYPE> art, design and blog
+
 
 TITLE> chair
 p> (no content yet)
@@ -18,11 +14,38 @@ DATE> ??/03/2021
 LANG> en
 TYPE> art, design and blog
 
-TITLE> training sketches
-p> (no content yet)
+TITLE> training sketches #1 - stairs
+p> (no content yet) -> place the stair sketch here
 DATE> ??/03/2021
 LANG> en
-TYPE> art, design and blog
+TYPE> art, design
+
+TITLE> tetra pak package
+p> 
+version 1
+<img src="https://cdn.discordapp.com/attachments/813209507466706965/821121816919015534/20210312_234150.jpg">
+DATE> ??/03/2021
+LANG> en
+TYPE> art, design
+
+TITLE> 3500pp
+p> with this play i reached 3500pp:
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/821377821585834034/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/821378062133493790/unknown.png">
+profile update:
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/821377927177437184/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/821378409728180274/unknown.png">
+god, this took a while to accomplish. 500pp was never this "hard" to get. i wasn't trying to get pp but to get better, but still... the transition from muzukashii to oni is for sure my greatest wall to break through, and it seems that i will flow a lot better in my gameplay when i be consistent at "slaying demons"
+
+i feel i'm reading a lot better double notes, like the introduction on <a href="https://osu.ppy.sh/beatmapsets/1202930#taiko/2505088">this map (Byakuya Gentou - Nekomata Master [Inner Oni])</a>, but this map specifically is just so techy to even pass right now...
+other than that i'm proud to maintain this "1k plays every month" thing, because i feel like i was always doing things inconsistently, and taiko demands consistency (at least my playstyle and objective do)
+but yeah, let's just remember that my pure objective in taiko is to just, consistently and effortlessly, read and play any pattern and longstreams with 1/4 notes on 180 bpm (the standard for drum and bass and other genres i like)
+
+oh yeah, there is <a href="https://osu.ppy.sh/beatmapsets/1395286">this map (AFRO KNUCKLE - Nekomata Master+ [Samba Oni])</a> that is just so fun to play (for now i have to slow it down 0.75 but it's so well mapped that it's yet really good). i wish i could be able also to play this and be able to do 99% accuracy...
+dreams you know...
+DATE> 25/03/2021
+LANG> en
+TYPE> taiko
 
 TITLE> SMURFando feat. Troc
 p> from 23/06/2020. the video is in portuguese. i think this video is one of my most well edited videos ever, even if the editing is simple, it is funny and has a good format both in time and in audio and video quality.
@@ -30,7 +53,7 @@ p> from 23/06/2020. the video is in portuguese. i think this video is one of my 
 <iframe width="80%" height="300" src="https://www.youtube.com/embed/k7gJeOWcCiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 DATE> 06/03/2021
 LANG> en
-TYPE> video editing
+TYPE> videomaking
 
 TITLE> first 5* A on taiko + mapping updates
 p>
@@ -69,8 +92,8 @@ TYPE> taiko
 TITLE> understanding the complex taiko: 3000pp
 p> <a href="https://osu.ppy.sh/users/4689256"><img src="https://media.discordapp.net/attachments/742944663996203120/799401957826756618/unknown.png"></a>
 <a href=https://osu.ppy.sh/beatmapsets/1345653 ><img src="https://media.discordapp.net/attachments/742944663996203120/799402078963105802/unknown.png"></a>
-i finished the beta version of my first beatmap <a href="https://osu.ppy.sh/beatmapsets/1345653" >ayako saso - dodge life</a>
 <img src="https://cdn.discordapp.com/attachments/742944663996203120/799402345003483186/unknown.png">
+i finished the beta version of my first beatmap <a href="https://osu.ppy.sh/beatmapsets/1345653" >ayako saso - dodge life</a>
 i'm starting to play the "real taiko" now... i mean, i can play (getting like 90%) things like <a href="https://osu.ppy.sh/b/2661437" > Sewerslvt - Yandere Complex [Oni] </a> and <a href="https://osu.ppy.sh/b/1320778" >m-flo loves CHEMISTRY - Astrosexy [Cosmos]</a> that are super consistent maps on density
 for example, yandere complex's oni has a lot of 1/2s with some triples between, but that's an oni level, so you get a map with only 1/2s and triples with really hard patterns, and they won't repeat at all apparently...
 the other one, we got no patterns at all, both for note color and note frequency... so you got something like this kddkd kdkk kkd dkdkk dk d dkdkkkd kkddkdk kkkdd dkd dd kkdkd kkd and i can get 90-93% accuracy consistently on this type of maps

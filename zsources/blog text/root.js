@@ -43,7 +43,7 @@ but yeah, let's just remember that my pure objective in taiko is to just, consis
 
 oh yeah, there is <a href="https://osu.ppy.sh/beatmapsets/1395286">this map (AFRO KNUCKLE - Nekomata Master+ [Samba Oni])</a> that is just so fun to play (for now i have to slow it down 0.75 but it's so well mapped that it's yet really good). i wish i could be able also to play this and be able to do 99% accuracy...
 dreams you know...
-DATE> 25/03/2021
+DATE> 16/03/2021
 LANG> en
 TYPE> taiko
 

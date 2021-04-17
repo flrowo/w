@@ -6,25 +6,40 @@ TITLE> chair
 p> (no content yet)
 DATE> ??/03/2021
 LANG> en
-TYPE> art, design and blog
+TYPE> art, design
 
 TITLE> rubber
 p> (no content yet)
 DATE> ??/03/2021
 LANG> en
-TYPE> art, design and blog
+TYPE> art, design
+
+TITLE>
+p> it's just weird, i'm feeling i got worse on easier maps, i just can't get a 99% on a low 4* map, but i'm faster, so i can get 95% on some ~4.8*ish maps...
+i just don't like this, i want to be consistent, be able to play every pattern that comes to me.
+i hope this is just some weird thing my brain is doing, i'm not feeling well with my skills because of this. it would be weird if i say i'm trying hard, you know, but yeah, THAT'S JUST NOT HARD ENOUGH! C'MON! THIS IS EXACLY WHAT I WANTED, THE MOST DIFFICULT, YET POSSIBLE TEST I COULD HAVE ASKED ON A GAME:
+BEING GOOD AT SOMETHING I DON'T HAVE ANY TALENT ON!!!!
+LET'S GOOOOOOO
+anyway, tomorrow is the big day to see the best taiko match i could ask for, brazil x japan, my 2 most favorite teams one against the other
+i really want brazil to win, they are really good, and you know, there is something special about they winning this...
+<a src="https://osu.ppy.sh/wiki/th/Tournaments/TWC/2021">link to the twc 2021</a> 
+DATE> 03/04/2021
+LANG> en
+TYPE> taiko, blog
 
 TITLE> training sketches #1 - stairs
-p> (no content yet) -> place the stair sketch here
-DATE> ??/03/2021
+p> <img src="https://cdn.discordapp.com/attachments/430201054173462548/823661789492805662/20210303_210807.jpg">
+DATE> 22/03/2021
 LANG> en
-TYPE> art, design
+TYPE> art, design, blog
 
 TITLE> tetra pak package
 p> 
-version 1
+first version
 <img src="https://cdn.discordapp.com/attachments/813209507466706965/821121816919015534/20210312_234150.jpg">
-DATE> ??/03/2021
+final version
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/823661253951750215/20210322_200829.jpg">
+DATE> 21/03/2021
 LANG> en
 TYPE> art, design
 
@@ -138,7 +153,7 @@ but here is a review if you can't run WebGL:
 
 DATE> 05/11/2020
 LANG> en
-TYPE> development & games
+TYPE> development, games
 
 TITLE> i posted on osu!taiko's community forums about spinners preventing FCs
 p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, even if you manage to full combo it, spinners make the game tell you that you did not FC.

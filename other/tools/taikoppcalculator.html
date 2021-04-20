@@ -8,14 +8,11 @@
         #output{
             color: black;
         }
-        #feedback{
-            display: hidden;
-        }
     </style>
 </head>
 <body>
     <p>using numbermaniac's <a href="https://osu.ppy.sh/community/forums/topics/472288">post</a> and <a href="https://mon.im/taikopp/">this calculator</a> as references</p>
-    map id: <input id="id" value="1202930"> <input type="button" value="load" onclick="loadmap();">
+    <!--map id: <input id="id" value="1202930"> <input type="button" value="load" onclick="loadmap();">-->
     <br><br><br><br>
     star rating: <input id="sr" value="5">
     <br><br>
@@ -28,12 +25,12 @@
     accuracy: <input id="acc" value="100" onchange="activateAcc(true);"> or 100s: <input id="n100s" value="0" onchange="activateAcc(false);">
     <br><br>
     mods:
-    <br>EZ <input type="checkbox" id="EZ">
-    <br>HR <input type="checkbox" id="HR">
     <br>DT <input type="checkbox" id="DT">
-    <br>HT <input type="checkbox" id="HT">
-    <br>FL <input type="checkbox" id="FL">
     <br>HD <input type="checkbox" id="HD">
+    <br>HR <input type="checkbox" id="HR">
+    <br>FL <input type="checkbox" id="FL">
+    <br>EZ <input type="checkbox" id="EZ">
+    <br>HT <input type="checkbox" id="HT">
     <br>NF <input type="checkbox" id="NF">
     <br><br>
     <input type="button" value="go" onclick="calculatePP();">
@@ -108,7 +105,7 @@
             
             if(strain < 0 || hitcount < 0 || misses < 0 || usercombo < 0 || acc < 0 || acc > 100 || OD300 < 0 ||
             (misses + hundreds) > hitcount || hundreds < 0){
-                document.getElementById("pp").innerHTML = "Something is wrong with at least one of your inputs."
+                document.getElementById("output").innerHTML = "something is wrong with at least one of your inputs."
                 return;
             }
 

@@ -2,19 +2,55 @@ const contentText =
 `
 
 
-TITLE> chair
-p> (no content yet)
-DATE> ??/03/2021
+TITLE> undergraduate thesis game log
+p>
+link to play the game me and my team developed in the browser:
+<a href="other/tcc/index.html">Guardians of Life</a>
+DATE> ??/??/2021
+LANG> en
+TYPE> games, development
+
+TITLE> sketchbook
+p> 
+rubber
+chair
+glue stick
+earphone
+logo
+bottle
+teethbrush
+mouse
+pen drive
+bathroom sign
+lamp
+free sketching
+DATE> 02/06/2021
 LANG> en
 TYPE> art, design
 
-TITLE> rubber
-p> (no content yet)
-DATE> ??/03/2021
+TITLE> sketch class exercises #3 - rice cooker
+p>
+first version
+<img src="">
+final version
+<img src="">
+DATE> 10/05/2021
 LANG> en
 TYPE> art, design
 
-TITLE>
+---------------------------------------------------------------------------------------------------
+
+TITLE> sketch class exercises #2 - deodorant
+p> 
+first version
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/831361694428692480/20210413_030023.jpg">
+final version
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/833850613003190342/20210419_202720.jpg">
+DATE> 19/04/2021
+LANG> en
+TYPE> art, design
+
+TITLE> taiko hardships
 p> it's just weird, i'm feeling i got worse on easier maps, i just can't get a 99% on a low 4* map, but i'm faster, so i can get 95% on some ~4.8*ish maps...
 i just don't like this, i want to be consistent, be able to play every pattern that comes to me.
 i hope this is just some weird thing my brain is doing, i'm not feeling well with my skills because of this. it would be weird if i say i'm trying hard, you know, but yeah, THAT'S JUST NOT HARD ENOUGH! C'MON! THIS IS EXACLY WHAT I WANTED, THE MOST DIFFICULT, YET POSSIBLE TEST I COULD HAVE ASKED ON A GAME:
@@ -33,7 +69,7 @@ DATE> 22/03/2021
 LANG> en
 TYPE> art, design, blog
 
-TITLE> tetra pak package
+TITLE> sketch class exercises #1 - tetra pak package
 p> 
 first version
 <img src="https://cdn.discordapp.com/attachments/813209507466706965/821121816919015534/20210312_234150.jpg">

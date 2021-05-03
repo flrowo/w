@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game list</title>
+</head>
+<body>
+    <div id="content">
+        <pre id="content-pre">loading...<pre>
+    </div>
+    <script src="./data.js"></script>
+    <script>
+        
+        let tempString = "";
+
+        data.consoleList.forEach((el0, i0) => {
+            tempString += el0 + ":";
+            data.gameList[i0].forEach((el1, i1) => {
+                tempString += "\n\t" + el1.gameName;
+                if(el1.notes) tempString += " (" + el1.notes + ")";
+            });
+            tempString += "\n\n";
+        });
+
+        document.getElementById("content-pre").innerHTML = tempString;
+
+</script>
+</body>
+</html>

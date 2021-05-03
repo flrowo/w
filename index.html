@@ -39,6 +39,7 @@
             <div class="menu-section">
                 <div class="menu-item"><a id="taiko" onclick="createContent('taiko');">&#129345; taiko</a></div>
                 <div class="menu-item"><a href="other/myanimelist/">&#128250; anime list</a></div>
+                <div class="menu-item"><a href="other/mygamelist/">&#128250; game list</a></div>
             </div>
             
             <div class="menu-section">contact/social media</div>
@@ -63,20 +64,20 @@
         
         <script>
             function clickToCopy(el) {
-            let range = document.createRange();
-            range.selectNode(el);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
+                let range = document.createRange();
+                range.selectNode(el);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
 
-            try {
-                var successful = document.execCommand('copy');
-                var msg = successful ? 'successful' : 'unsuccessful';
-                console.log('Copying text command was ' + msg);
-                alert("copied the discord tag to clipboard!");
-            } catch (err) {
-                console.log('Oops, unable to copy');
-            }
-        };
+                try {
+                    var successful = document.execCommand('copy');
+                    var msg = successful ? 'successful' : 'unsuccessful';
+                    console.log('Copying text command was ' + msg);
+                    alert("copied the discord tag to clipboard!");
+                } catch (err) {
+                    console.log('Oops, unable to copy');
+                }
+            };
         </script>
 
     </div>

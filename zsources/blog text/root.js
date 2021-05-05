@@ -10,7 +10,7 @@ DATE> ??/??/2021
 LANG> en
 TYPE> games, development
 
-TITLE> sketchbook
+TITLE> sketch classes' sketchbook
 p> 
 rubber
 chair
@@ -31,7 +31,7 @@ TYPE> art, design
 TITLE> sketch class exercises #3 - rice cooker
 p>
 first version
-<img src="">
+<img src="https://cdn.discordapp.com/attachments/430201054173462548/838926490459570187/20210504_000103.jpg">
 final version
 <img src="">
 DATE> 10/05/2021

@@ -4,7 +4,7 @@ const data = {
         [
             {"gameName":"Star Fox 64", "notes":null},
             {"gameName":"1080° Snowboarding","notes":null},
-            {"gameName":"Intenational Super Star Soccer 64","notes":null},
+            {"gameName":"International Super Star Soccer 64","notes":null},
             {"gameName":"Wave Race 64","notes":null},
             {"gameName":"Cruis'n USA","notes":null},
             {"gameName":"Kirby 64: The Crystal Shards","notes":null}
@@ -50,7 +50,8 @@ const data = {
             {"gameName":"Guitar Hero: On Tour", "notes":null},
             {"gameName":"Cooking Mama", "notes":null},
             {"gameName":"Yu-Gi-Oh! World Championship 2008", "notes":null},
-            {"gameName":"Ninjatown", "notes":null}
+            {"gameName":"Ninjatown", "notes":null},
+            {"gameName":"Nintendogs", "notes":null}
         ],
         [
             {"gameName":"Sonic Rivals 2", "notes":null},
@@ -76,7 +77,10 @@ const data = {
             {"gameName":"Pilotwings Resort", "notes":null},
             {"gameName":"Pro Evolution Soccer 2011", "notes":null},
             {"gameName":"Pokémon Rumble Blast", "notes":null},
-            {"gameName":"Super Mario 3D Land", "notes":null}
+            {"gameName":"Super Mario 3D Land", "notes":null},
+            {"gameName":"New Super Mario Bros. 2", "notes":null},
+            {"gameName":"Asphalt 3D", "notes":null},
+            {"gameName":"Nintendogs + Cats", "notes":null}
         ],
         [
             {"gameName":"Mario Kart 8", "notes":null},
@@ -126,7 +130,8 @@ const data = {
             {"gameName":"Pokemon Platinum", "notes":"JohneAwesome"},
             {"gameName":"Pokemon Omega Ruby", "notes":"JohneAwesome"},
             {"gameName":"Super Mario Bros.", "notes":"Velberan"},
-            {"gameName":"Super Mario 64", "notes":"JohneAwesome"},
+            {"gameName":"Super Mario 64", "notes":"Velberan, Cheese"},
+            {"gameName":"Super Mario Sunshine", "notes":"Velberan"},
             {"gameName":"Mirror's Edge Catalyst", "notes":"PewDiePie"},
             {"gameName":"Muse Dash", "notes":"Eterno"},
             {"gameName":"Pokémon Battle Revolution", "notes":"Eterno"},

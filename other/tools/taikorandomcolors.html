@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <textarea id="input1" rows="15" cols="50"></textarea>
+    <button onclick="generateCGS();">GO</button>
+    <pre id="output"></pre>
+    <script>
+        document.getElementById("input1").value = `96,80,7122,1,0
+158,80,7308,1,0
+262,150,7681,1,0
+324,151,7867,1,0
+423,228,8240,1,0`;
+
+        function generateCGS(){
+            let inp1 = document.getElementById("input1").value;
+            console.log(inp1);
+            let splitstring = inp1.split(/\r?\n/);
+
+            let itt = 0;
+            let tempitem;
+            let newarray = "";
+            while(itt < splitstring.length){
+
+                tempitem = splitstring[itt].split(",");
+
+                tempitem.forEach((el, i) => {
+                    let t;
+                    if(i == 4){
+                        t = Math.floor(Math.random()*2)*8;
+                    } else t = el;
+                    if (tempitem.length == i+1) {
+                        t += "\n";
+                    } else {
+                        t += ",";
+                    }
+                    newarray += t;
+                });
+
+                itt++;
+            }
+
+            document.getElementById("output").innerHTML = newarray;
+        }
+
+    </script>
+</body>
+</html>

@@ -7,13 +7,16 @@
 <body>
     <div id="div1">
         <p>example</p>
-        <textarea id="example" rows="40" cols="100" disabled></textarea>
+        <textarea id="example" rows="15" cols="100" disabled></textarea>
     </div>
     <div id="div2">
         <p>paste like above:</p>
         <textarea id="input1" rows="40" cols="100"></textarea>
         <br>
-        <button style="font-size: 50px;" onclick="generateCGS();">GO</button>
+        <div id="buttons">
+            <button style="font-size: 50px; margin: 5px;" onclick="generateCGS();">GO</button>
+            <button style="font-size: 50px; margin: 5px;" onclick="copyToClipboard();">COPY</button>
+        </div>
         <pre id="output"></pre>
     </div>
     <script>
@@ -61,9 +64,24 @@
             if(isThereHitObjects){
                 newarray = inp1.split("[HitObjects]\n")[0] + "[HitObjects]\n" + newarray;
             }
-
             document.getElementById("output").innerHTML = newarray;
         }
+
+        function copyToClipboard() {
+            let range = document.createRange();
+            range.selectNode(document.getElementById("output"));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+                alert("copied to clipboard!");
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+        };
 
     </script>
 </body>

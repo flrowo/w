@@ -28,17 +28,27 @@ DATE> 02/06/2021
 LANG> en
 TYPE> art, design
 
+TITLE> sketch class exercises #5 - blender
+p>
+first version
+<img src="https://cdn.discordapp.com/attachments/808452783341830185/846492889667338270/unknown.png">
+final version
+<img src="">
+DATE> 31/05/2021
+LANG> en
+TYPE> art, design
+
+---------------------------------------------------------------------------------------------------
+
 TITLE> sketch class exercises #3 - rice cooker
 p>
 first version
 <img src="https://cdn.discordapp.com/attachments/430201054173462548/838926490459570187/20210504_000103.jpg">
 final version
-<img src="">
+<img src="https://cdn.discordapp.com/attachments/808452783341830185/846494014224334898/unknown.png">
 DATE> 10/05/2021
 LANG> en
 TYPE> art, design
-
----------------------------------------------------------------------------------------------------
 
 TITLE> sketch class exercises #2 - deodorant
 p> 

@@ -1,7 +1,6 @@
 const contentText = 
 `
 
-
 TITLE> undergraduate thesis game log
 p>
 link to play the game me and my team developed in the browser:
@@ -39,6 +38,24 @@ LANG> en
 TYPE> art, design
 
 ---------------------------------------------------------------------------------------------------
+
+TITLE> am i learning how to stream?
+p>
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/847886115574906890/unknown.png">
+131 bpm 98% acc on a stream map, maybe the HT (half time) mod is the way...
+DATE> 28/05/2021
+LANG> en
+TYPE> taiko
+
+TITLE> reached 4000pp with this play
+p><img src="https://cdn.discordapp.com/attachments/742944663996203120/843907266989522954/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/843910275697868810/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/742944663996203120/843925850428407858/unknown.png">
+i feel like i got the taiko basics now, i can alternate everything if it is slow enough, but streams aren't easy at all yet
+the thing is, i just feel like i don't know how to look at a stream when it comes, it looks like i just get lost on all those notes coming at once, and not only that, i need to keep doing it until the end...
+DATE> 17/05/2021
+LANG> en
+TYPE> taiko
 
 TITLE> sketch class exercises #3 - rice cooker
 p>

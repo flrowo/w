@@ -7,14 +7,17 @@ const data = {
             {"gameName":"International Super Star Soccer 64","notes":null},
             {"gameName":"Wave Race 64","notes":null},
             {"gameName":"Cruis'n USA","notes":null},
-            {"gameName":"Kirby 64: The Crystal Shards","notes":null}
+            {"gameName":"Kirby 64: The Crystal Shards","notes":null},
+            {"gameName":"Mario Party 2","notes":null}
         ],
         [
             {"gameName":"Mario Bros.", "notes":"NES"},
             {"gameName":"Excitebike", "notes":"NES"},
             {"gameName":"Mario Kart: Super Circuit", "notes":null},
             {"gameName":"Pokémon Emerald", "notes":null},
-            {"gameName":"Pokémon FireRed", "notes":null}
+            {"gameName":"Pokémon FireRed", "notes":null},
+            {"gameName":"Fire Emblem: The Blazing Blade", "notes":null},
+            {"gameName":"Advance Wars", "notes":null}
         ],
         [
             {"gameName":"Syphon Filter", "notes":"PS1"},
@@ -129,6 +132,8 @@ const data = {
             {"gameName":"Pokemon Sword", "notes":"JohneAwesome"},
             {"gameName":"Pokemon Platinum", "notes":"JohneAwesome"},
             {"gameName":"Pokemon Omega Ruby", "notes":"JohneAwesome"},
+            {"gameName":"Phoenix Wright: Phoenix Wright: Ace Attorney Trilogy", "notes":"JohneAwesome"},
+            {"gameName":"Scott Pilgrim Vs. The World: The Game", "notes":"Velberan"},
             {"gameName":"Super Mario Bros.", "notes":"Velberan"},
             {"gameName":"Super Mario 64", "notes":"Velberan, Cheese"},
             {"gameName":"Super Mario Sunshine", "notes":"Velberan"},

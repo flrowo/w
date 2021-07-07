@@ -48,7 +48,7 @@
 				(typeof d1 === typeof 32)
 				)
 			){
-				return 0;
+				return "?";
 			}
 			date1 = new Date(y1, m1, d1);
 			date2 = new Date(y2, m2, d2);
@@ -116,6 +116,7 @@
 		switch (sortby){
 		//sort by the finish date
 		case 0:
+			if(page == 0) return;
 			list[page].forEach(el => {
 				if((el.end[0]+"").startsWith("?")) listToAddAfter.push(el);
 				else listToSort.push(el);
@@ -138,8 +139,8 @@
 					return 0;
 				});
 			}
-			listToAddAfter.forEach(el => listToSort.push(el));
-			updateList(page, listToSort);
+			
+			updateList(page, listToAddAfter.concat(listToSort));
 			break;
 			
 		//sort alphabeticaly
@@ -167,6 +168,7 @@
 			
 		//sort by score
 		case 2:
+			if(page == 0) return;
 			list[page].forEach(el => {
 				if(el.score.startsWith("?")) listToAddAfter.push(el);
 				else listToSort.push(el);
@@ -189,8 +191,8 @@
 					return 0;
 				});
 			}
-			listToAddAfter.forEach(el => listToSort.push(el));
-			updateList(page, listToSort);
+			
+			updateList(page, listToAddAfter.concat(listToSort));
 			break;
 			
 		}
@@ -202,7 +204,7 @@
 		if(page == 1){
 			sortList(0, 0, initialList);
 		} else if (page == 0){
-			sortList(0, 1, initialList);
+			sortList(1, 1, initialList);
 		}
 	}
 
@@ -249,7 +251,7 @@
 				item = list[i];
 				ndays = subtractDays(item.start[2],item.start[1],item.start[0], item.end[2],item.end[1],item.end[0]);
 				if (isNaN(ndays)){
-					ndays = "some";
+					ndays = "?";
 				}
 				htmlstring += ''+
 				"<div class='animediv'>"+

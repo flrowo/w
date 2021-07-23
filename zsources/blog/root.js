@@ -3,6 +3,12 @@ const contentText =
 
 ---------------------------------------------------------------------------------------------------
 
+TITLE> my taiko skin release
+p> <a href="./zsources/files/skin.zip" download>link</a> for it
+DATE> 23/07/2021
+LANG> en
+TYPE> taiko, design
+
 TITLE> sketch classes' sketchbook
 p> 
 rubber

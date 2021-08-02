@@ -3,6 +3,31 @@ const contentText =
 
 ---------------------------------------------------------------------------------------------------
 
+TITLE> the end is actually freedom
+p>
+<img src="zsources/blog/img/871592063664259092.png">
+<img src="zsources/blog/img/871592632961368134.png">
+this is the end of the "getting the basics" as today was the day that completed 1 year of taiko for me
+this was the run, and now there is no more time objectives i want to accomplish
+
+what i wanted was to be getting 98% on every type of 5.5* map, that didn't happen, but i got somewhere else:
+i can play any 2* map and get SS
+3* maps are FCable with an average of 99% acc
+the lower half of 4* are FCable with an average 98%, there are map styles that are exceptions to this, but overall that's it
+some from the 4*'s higher half are FCable, some with 99% some with 97%. there are some maps i can't pass, i get like 90% and fail. there are maps i feel are at my skill level, getting 95% with 1% of the notes being misses
+
+thinking about this, what i feel is that the harder the map you play the more inconsistent it is to play it, and that is happening at an earlier stage for me, comparing to other players, probably because of my playstyle, as the maps start having weird things to read for full alt, like double notes and streams
+
+and that's it, i think now i will finally be able to just play the game, and forget about trying to get better
+i will probably just play whenever i would like to do so and will probably try other playstyles, like hitting big notes, crosstapping, kkdd, retrying tons of times the same map, playing for combo instead of accuracy, swap to 4 fingers, or even just keep playing like i play right now, who knows what else
+but the most important thing is that i won't stop here, maybe i take a break, but i don't think i will quit soon, that very first objective of doing streams indefinitely is something i still want to be able to do some day
+
+let's go
+
+DATE> 02/08/2021
+LANG> en
+TYPE> taiko
+
 TITLE> my taiko skin release
 p> <a href="./zsources/files/skin.zip" download>link</a> for it
 DATE> 23/07/2021

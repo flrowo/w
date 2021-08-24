@@ -55,7 +55,7 @@ DATE> 07/06/2021
 LANG> en
 TYPE> art, design
 
-TITLE> sketch class exercises #5 - blender
+TITLE> sketch class exercises #4 - blender
 p>
 first version
 <img src="zsources/blog/img/846492889667338270.png">

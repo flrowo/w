@@ -28,6 +28,7 @@ fetch(new Request('https://parallelum.com.br/fipe/api/v1/carros/marcas', {method
 */
 
 let lastCLicked;
+let contentArray = [];
 
 function createContent(type = "all"){
     if(type == lastCLicked) {
@@ -54,7 +55,7 @@ function createContent(type = "all"){
     });
     
     let actContent = [];
-    
+
     (() => {
         let i = filtered.length-1;
         while(i >= 0){
@@ -76,12 +77,9 @@ function createContent(type = "all"){
         }
         while(i >= 0){
             if(allContent || actContent[i].type.includes(type)){
-                htmlstring += `<div class="content-item">
-                <h1>${actContent[i].title}</h1><br>
+                htmlstring += `<div id="contentdiv${i}" class="content-item">
+                <h1 class="clickable" onclick="selectContent(${i});">${actContent[i].title}</h1><br>
                 ${actContent[i].type} - ${actContent[i].date}
-                <hr>
-                ${actContent[i].text}
-                <br><br>
                 </div>`;
             }
             i--;
@@ -100,11 +98,52 @@ function createContent(type = "all"){
 
     })();
 
-    window.history.pushState("object or string", "Title", "/new-url");
+    //window.history.pushState("object or string", "Title", "/new-url");
+
+    contentArray = actContent;
 
 }
 
+function selectContent(contentid){
+    
+    document.getElementById("contentdiv"+contentid).innerHTML += `<hr>${contentArray[contentid].text}<br><br>`;
+    document.getElementById("contentdiv"+contentid).children[0].className = "";
+    document.getElementById("contentdiv"+contentid).children[0].onclick = (()=>{});
+
+}
+
+const goToContentid = new URLSearchParams(window.location.search).get('contentid');
+console.log("contentid: "+goToContentid);
+
 createContent();
+
+if(goToContentid != null){
+    let htmlstring = "";
+    if(goToContentid < contentArray.length && goToContentid >= 0){
+        htmlstring += `<button id="backbutton" onclick="window.location.href = 'index.html'">back</button>
+        <div class="content-item">
+        <h1>${contentArray[goToContentid].title}</h1><br>
+        ${contentArray[goToContentid].type} - ${contentArray[goToContentid].date}
+        <hr>
+        ${contentArray[goToContentid].text}
+        <br><br>
+        </div>`;
+    }
+    else {
+        let icontent = new Content("Something went wrong... ", "share this bug with calmylake on twitter or 0173#7029 on discord so he can fix it", "00/00/0000", "bruh");
+        htmlstring += `<button id="backbutton" onclick="window.location.href = 'index.html'">back</button>
+        <div class="content-item">
+        <h1>${icontent.title+icontent.type}</h1><br>
+        ${icontent.type} - ${icontent.date}
+        <hr>
+        ${icontent.text}
+        <br><br>
+        </div>`;
+    }
+    document.getElementById("content").innerHTML = htmlstring.trim();
+}
+
+
 
 var backToTopButton = document.getElementById("backToTop");
 

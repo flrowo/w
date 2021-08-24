@@ -125,6 +125,7 @@ const data = {
         ],
         [
             {"gameName":"Undertale", "notes":"Ataque da Casa"},
+            {"gameName":"Katamari Damacy", "notes":"Ataque da Casa"},
             {"gameName":"Persona 5", "notes":"JohneAwesome"},
             {"gameName":"Persona 4 Golden", "notes":"JohneAwesome"},
             {"gameName":"Persona 3 FES", "notes":"JohneAwesome"},
@@ -133,6 +134,7 @@ const data = {
             {"gameName":"Pokemon Platinum", "notes":"JohneAwesome"},
             {"gameName":"Pokemon Omega Ruby", "notes":"JohneAwesome"},
             {"gameName":"Phoenix Wright: Phoenix Wright: Ace Attorney Trilogy", "notes":"JohneAwesome"},
+            {"gameName":"The Great Ace Attorney: Adventures", "notes":"JohneAwesome"},
             {"gameName":"Scott Pilgrim Vs. The World: The Game", "notes":"Velberan"},
             {"gameName":"Super Mario Bros.", "notes":"Velberan"},
             {"gameName":"Super Mario 64", "notes":"Velberan, Cheese"},

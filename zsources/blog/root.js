@@ -3,6 +3,13 @@ const contentText =
 
 ---------------------------------------------------------------------------------------------------
 
+TITLE> 5* FC medal
+p> <img src="zsources/blog/img/871592063664259092.png">
+cringe
+DATE> 18/10/2021
+LANG> en
+TYPE> taiko
+
 TITLE> the end is actually freedom
 p>
 <img src="zsources/blog/img/871592063664259092.png">
@@ -29,7 +36,7 @@ LANG> en
 TYPE> taiko
 
 TITLE> my taiko skin release
-p> <a href="./zsources/files/skin.zip" download>link</a> for it
+p> <a href="./zsources/files/osuskin/flr's references.osk" download>link</a> for it
 DATE> 23/07/2021
 LANG> en
 TYPE> taiko, design

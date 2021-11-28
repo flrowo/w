@@ -4,7 +4,7 @@ const contentText =
 ---------------------------------------------------------------------------------------------------
 
 TITLE> 5* FC medal
-p> <img src="zsources/blog/img/871592063664259092.png">
+p> <img src="zsources/blog/img/899769565402259476.png">
 cringe
 DATE> 18/10/2021
 LANG> en

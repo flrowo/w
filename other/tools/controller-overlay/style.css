@@ -43,7 +43,7 @@ body {
 .controller{
     width: 784px;
     height: 639px;
-    background-image: url("../img/background.png");
+    background-image: url("./img/background.png");
     background-repeat: no-repeat;
 }
 
@@ -53,25 +53,25 @@ body {
 #btn0{
     margin-top: 16.993em;
     margin-left: 38.2em;
-    background-image: url("../img/x.png");
+    background-image: url("./img/x.png");
 }
 
 #btn1{
     margin-top: 13.368em;
     margin-left: 41.75em;
-    background-image: url("../img/circle.png");
+    background-image: url("./img/circle.png");
 }
 
 #btn2{
     margin-top: 13.368em;
     margin-left: 34.57em;
-    background-image: url("../img/square.png");
+    background-image: url("./img/square.png");
 }
 
 #btn3{
     margin-top: 9.745em;
     margin-left: 38.2em;
-    background-image: url("../img/triangle.png");
+    background-image: url("./img/triangle.png");
 }
 
 
@@ -80,14 +80,14 @@ body {
     padding: 18.5px 54px;
     margin-top: 5.558em;
     margin-left: 5.94em;
-    background-image: url("../img/l1.png");
+    background-image: url("./img/l1.png");
 }
 
 #btn5{
     padding: 18.5px 53px;
     margin-top: 5.558em;
     margin-left: 36.45em;
-    background-image: url("../img/r1.png");
+    background-image: url("./img/r1.png");
 }
 
 
@@ -96,14 +96,14 @@ body {
     padding: 45px 53px;
     margin-top: 0;
     margin-left: 5.2em;
-    background-image: url("../img/l2.png");
+    background-image: url("./img/l2.png");
 }
 
 #btn7{
     padding: 45px 53px;
     margin-top: 0.05em;
     margin-left: 37.15em;
-    background-image: url("../img/r2.png");
+    background-image: url("./img/r2.png");
 }
 
 
@@ -112,14 +112,14 @@ body {
     padding: 18.5px 11px;
     margin-top: 8.358em;
     margin-left: 12.31em;
-    background-image: url(../img/select.png);
+    background-image: url(./img/select.png);
 }
 
 #btn9{
     padding: 18px 12px;
     margin-top: 8.498em;
     margin-left: 35.18em;
-    background-image: url("../img/start.png");
+    background-image: url("./img/start.png");
 }
 
 
@@ -128,14 +128,14 @@ body {
     padding: 45.5px 45.5px;
     margin-top: 18.805em;
     margin-left: 13.83em;
-    background-image: url("../img/l3.png");
+    background-image: url("./img/l3.png");
 }
 
 #btn11{
     padding: 45.5px 45.5px;
     margin-top: 18.8em;
     margin-left: 29.47em;
-    background-image: url("../img/r3.png");
+    background-image: url("./img/r3.png");
 }
 
 
@@ -144,28 +144,28 @@ body {
     padding: 27px 21px;
     margin-top: 10.875em;
     margin-left: 7.96em;
-    background-image: url("../img/up.png");
+    background-image: url("./img/up.png");
 }
 
 #btn13{
     padding: 26px 21px;
     margin-top: 15.638em;
     margin-left: 7.96em;
-    background-image: url("../img/down.png");
+    background-image: url("./img/down.png");
 }
 
 #btn14{
     padding: 21px 26px;
     margin-top: 13.618em;
     margin-left: 5.31em;
-    background-image: url("../img/left.png");
+    background-image: url("./img/left.png");
 }
 
 #btn15{
     padding: 21px 27px;
     margin-top: 13.608em;
     margin-left: 9.95em;
-    background-image: url("../img/right.png");
+    background-image: url("./img/right.png");
 }
 
 
@@ -174,14 +174,14 @@ body {
     padding: 20px 26px;
     margin-top: 20em;
     margin-left: 22.93em;
-    background-image: url("../img/PLAYSTATION.png");
+    background-image: url("./img/PLAYSTATION.png");
 }
 
 #btn17{
     padding: 84.5px 156px;
     margin-top: 6em;
     margin-left: 14.7em;
-    background-image: url("../img/touch.png");
+    background-image: url("./img/touch.png");
 }
 
 

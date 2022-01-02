@@ -143,7 +143,8 @@ const data = {
             {"gameName":"Mirror's Edge Catalyst", "notes":"PewDiePie"},
             {"gameName":"Muse Dash", "notes":"Eterno"},
             {"gameName":"Pokémon Battle Revolution", "notes":"Eterno"},
-            {"gameName":"Super Mario 3D World", "notes":"HardCapone"}
+            {"gameName":"Super Mario 3D World", "notes":"HardCapone"},
+            {"gameName":"Star Fox Zero", "notes":"Argick"}
         ]
 
     ]

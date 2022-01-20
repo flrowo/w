@@ -3,6 +3,17 @@ const contentText =
 
 ---------------------------------------------------------------------------------------------------
 
+
+TITLE> FC SONO CHI NO SADAME + HT
+p> there is <a href=https://osu.ppy.sh/beatmapsets/1536015>this map</a> i really like, and i was having trouble a month or two to fc this map, now i feel i can fc many times i want
+<iframe width="80%" height="300" src="https://www.youtube.com/embed/HIK7vq6Bcd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+there was this cheese i did that was really funny.. so i made this video
+oh, there is also the bongo cat skin i created based on another skin that wasn't working recently that shinchiku home used to use
+(maybe someday he will try my skin??)
+DATE> 17/01/2022
+LANG> en
+TYPE> taiko
+
 TITLE> 5* FC medal
 p> <img src="zsources/blog/img/899769565402259476.png">
 cringe

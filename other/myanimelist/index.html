@@ -104,7 +104,7 @@
 
 
 
-	var page = 0;
+	var page = 1;
 	var initialList = animes;
 	if(!initialList) alert("something went wrong with getting the anime list");
 	var animelistSpan = document.getElementById('animelist');
@@ -360,8 +360,8 @@
 		if (nameB > nameA) {return 1;}
 		return 0;
 	});
-	sortList(1, 0, initialList);
-	var boo = 0;
+	sortList(0, 0, initialList);
+	var boo = 1;
 
 	</script>
 	

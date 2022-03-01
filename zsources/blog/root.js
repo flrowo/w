@@ -1,8 +1,14 @@
-const contentText = 
-`
+const contentText =
+    `
 
 ---------------------------------------------------------------------------------------------------
-
+TITLE> i started streaming regularly
+p> it's been more than a month now, but i started streaming at <a href="https://www.twitch.tv/flrowo">my twitch channel</a>
+my idea is to make live content as well as edit the content created from those streams to post on <a href="https://www.youtube.com/channel/UCUiaHldlB2GY5ovjRE6KFUQ">my youtube channel</a>
+the content is mainly rocket league it seems...
+DATE> 2022/03/01
+LANG> en
+TYPE> videomaking, games
 
 TITLE> FC SONO CHI NO SADAME + HT
 p> there is <a href=https://osu.ppy.sh/beatmapsets/1536015>this map</a> i really like, and i was having trouble a month or two to fc this map, now i feel i can fc many times i want
@@ -10,14 +16,14 @@ p> there is <a href=https://osu.ppy.sh/beatmapsets/1536015>this map</a> i really
 there was this cheese i did that was really funny.. so i made this video
 oh, there is also the bongo cat skin i created based on another skin that wasn't working recently that shinchiku home used to use
 (maybe someday he will try my skin??)
-DATE> 17/01/2022
+DATE> 2022/01/17
 LANG> en
 TYPE> taiko
 
 TITLE> 5* FC medal
 p> <img src="zsources/blog/img/899769565402259476.png">
 cringe
-DATE> 18/10/2021
+DATE> 2021/10/18
 LANG> en
 TYPE> taiko
 
@@ -42,13 +48,13 @@ but the most important thing is that i won't stop here, maybe i take a break, bu
 
 let's go
 
-DATE> 02/08/2021
+DATE> 2021/08/02
 LANG> en
 TYPE> taiko
 
 TITLE> my taiko skin release
 p> <a href="./zsources/files/osuskin/flr's references.osk" download>link</a> for it
-DATE> 23/07/2021
+DATE> 2021/07/23
 LANG> en
 TYPE> taiko, design
 
@@ -69,7 +75,7 @@ free sketching
 
 <a href="./zsources/blog/files/sketchbook_joaopedrolibonati.pdf" download>sketchbook pdf</a>
 
-DATE> 07/06/2021
+DATE> 2021/06/07
 LANG> en
 TYPE> art, design
 
@@ -79,7 +85,7 @@ first version
 <img src="zsources/blog/img/846492889667338270.png">
 final version
 <img src="zsources/blog/img/858732043415453706.png">
-DATE> 31/05/2021
+DATE> 2021/05/31
 LANG> en
 TYPE> art, design
 
@@ -87,7 +93,7 @@ TITLE> am i learning how to stream?
 p>
 <img src="zsources/blog/img/847886115574906890.png">
 131 bpm 98% acc on a stream map, maybe the HT (half time) mod is the way...
-DATE> 28/05/2021
+DATE> 2021/05/28
 LANG> en
 TYPE> taiko
 
@@ -97,7 +103,7 @@ p><img src="zsources/blog/img/843907266989522954.png">
 <img src="zsources/blog/img/843925850428407858.png">
 i feel like i got the taiko basics now, i can alternate everything if it is slow enough, but streams aren't easy at all yet
 the thing is, i just feel like i don't know how to look at a stream when it comes, it looks like i just get lost on all those notes coming at once, and not only that, i need to keep doing it until the end...
-DATE> 17/05/2021
+DATE> 2021/05/17
 LANG> en
 TYPE> taiko
 
@@ -107,7 +113,7 @@ first version
 <img src="zsources/blog/img/838926490459570187.jpg">
 final version
 <img src="zsources/blog/img/846494014224334898.png">
-DATE> 10/05/2021
+DATE> 2021/05/10
 LANG> en
 TYPE> art, design
 
@@ -115,7 +121,7 @@ TITLE> undergraduate thesis game log
 p>
 link to play the game me and my team developed in the browser:
 <a href="other/tcc/index.html">Guardians of Life</a>
-DATE> 06/05/2021
+DATE> 2021/05/06
 LANG> en
 TYPE> games, development
 
@@ -125,7 +131,7 @@ first version
 <img src="zsources/blog/img/831361694428692480.jpg">
 final version
 <img src="zsources/blog/img/833850613003190342.jpg">
-DATE> 19/04/2021
+DATE> 2021/04/19
 LANG> en
 TYPE> art, design
 
@@ -138,13 +144,13 @@ LET'S GOOOOOOO
 anyway, tomorrow is the big day to see the best taiko match i could ask for, brazil x japan, my 2 most favorite teams one against the other
 i really want brazil to win, they are really good, and you know, there is something special about they winning this...
 <a src="https://osu.ppy.sh/wiki/th/Tournaments/TWC/2021">link to the twc 2021</a> 
-DATE> 03/04/2021
+DATE> 2021/04/03
 LANG> en
 TYPE> taiko, blog
 
 TITLE> training sketches #1 - stairs
 p> <img src="zsources/blog/img/823661789492805662.jpg">
-DATE> 22/03/2021
+DATE> 2021/03/22
 LANG> en
 TYPE> art, design, blog
 
@@ -154,7 +160,7 @@ first version
 <img src="zsources/blog/img/821121816919015534.jpg">
 final version
 <img src="zsources/blog/img/823661253951750215.jpg">
-DATE> 21/03/2021
+DATE> 2021/03/21
 LANG> en
 TYPE> art, design
 
@@ -173,7 +179,7 @@ but yeah, let's just remember that my pure objective in taiko is to just, consis
 
 oh yeah, there is <a href="https://osu.ppy.sh/beatmapsets/1395286">this map (AFRO KNUCKLE - Nekomata Master+ [Samba Oni])</a> that is just so fun to play (for now i have to slow it down 0.75 but it's so well mapped that it's yet really good). i wish i could be able also to play this and be able to do 99% accuracy...
 dreams you know...
-DATE> 16/03/2021
+DATE> 2021/03/16
 LANG> en
 TYPE> taiko
 
@@ -181,7 +187,7 @@ TITLE> SMURFando feat. Troc
 p> from 23/06/2020. the video is in portuguese. i think this video is one of my most well edited videos ever, even if the editing is simple, it is funny and has a good format both in time and in audio and video quality.
 
 <iframe width="80%" height="300" src="https://www.youtube.com/embed/k7gJeOWcCiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-DATE> 06/03/2021
+DATE> 2021/03/06
 LANG> en
 TYPE> videomaking
 
@@ -197,7 +203,7 @@ i'm getting better at 1/4 patterns, but i just cannot do 1/4 streams at all, som
 turfmastaz
 <img src="zsources/blog/img/815737259890180137.png">
 i love this song so much i tried to make the most fun and consistently difficult map i could. let's see if i can play this in a few (years?? months please?)
-DATE> 01/03/2021
+DATE> 2021/03/01
 LANG> en
 TYPE> taiko
 
@@ -207,7 +213,7 @@ p> no accuracy but fast fingers day made it be real
 <img src="zsources/blog/img/817625921405583390.png">
 <img src="zsources/blog/img/802651522374696991.png">
 and this one too, on the same day
-DATE> 23/01/2021
+DATE> 2021/01/23
 LANG> en
 TYPE> taiko
 
@@ -215,7 +221,7 @@ TITLE> S on a 4* map
 p> this is my first S on a 4 stars map and top play at the moment
 <img src="zsources/blog/img/800924843813896202.png">
 <a href="https://osu.ppy.sh/beatmaps/2348435">map link</a>
-DATE> 19/01/2021
+DATE> 2021/01/19
 LANG> en
 TYPE> taiko
 
@@ -234,7 +240,7 @@ meaning i need to get consistent at reading 1/4 streams for some seconds, like i
 and to be honest... that's what i want for taiko, to be able to read 1/4 streams for eternity
 those are my thoughts for the future now
 
-DATE> 14/01/2021
+DATE> 2021/01/14
 LANG> en
 TYPE> taiko
 
@@ -242,7 +248,7 @@ TITLE> first 150pp play and tournaments
 p> i didn't say here before, but i was playing on a 2v2 taiko tournament (<a href="https://gtsosu.com/bgts/home">BGTS</a>) with <a href="https://osu.ppy.sh/users/12371820">pls</a>. we got through group stage, but we lost to romania, so we are in the losers bracket
 BUT... at night, i got my first 150pp play on a song i like a lot:
 <a href="https://osu.ppy.sh/beatmapsets/1251607#taiko/2602571">Yoru Naku Usagi wa Yume o Miru - UNDEAD CORPORATION<img src="zsources/blog/img/790054024912830474.png"></a>
-DATE> 19/12/2020
+DATE> 2020/12/19
 LANG> en
 TYPE> taiko
 
@@ -255,7 +261,7 @@ and i started to think about changing my playstyle to 4 finger, but that's not g
 
 <img src="zsources/blog/img/775379464926396436.png">
 
-DATE> 09/11/2020
+DATE> 2020/11/09
 LANG> en
 TYPE> taiko
 
@@ -266,7 +272,7 @@ but here is a review if you can't run WebGL:
 <img src="https://calmylake.github.io/w/other/minecraft-floating-item/preview.gif"></img>
 
 
-DATE> 05/11/2020
+DATE> 2020/11/05
 LANG> en
 TYPE> development, games
 
@@ -275,13 +281,13 @@ p> tl;dr: I posted about how spinners prevent a "Perfect" score on osu!taiko, ev
 
 check the post <a href="https://osu.ppy.sh/community/forums/topics/1163245">here</a> for more info
 
-DATE> 16/10/2020
+DATE> 2020/10/16
 LANG> en
 TYPE> taiko
 
 TITLE> personal objective for taiko
 p> <a href="https://osu.ppy.sh/b/1619708">monolithize phases - paraoka feat. haru*nya<img src=zsources/blog/img/766396643745595442.png></a>
-DATE> 15/10/2020
+DATE> 2020/10/15
 LANG> en
 TYPE> taiko
 
@@ -310,7 +316,7 @@ that's something that mobile apps and webapps aren't doing at all, even though t
 
 i think we should have a design that should be simple and intuitive, but at the same time, prevent miss clicks from the user so they can have a better experience with the app and so apps can track better their users.  
 
-DATE> 16/10/2020 
+DATE> 2020/10/16
 LANG> en
 TYPE> design
 
@@ -328,14 +334,14 @@ what i noticed about my coding style is that i like to think ahead into the futu
 
 at the same time, you can see with the first try that i did not output exactly what was proposed. i output "3" instead of "Fizz", "5" instead of "Buzz" and "3 e 5" instead of "FizzBuzz". that's something i could work on from now on.
 
-DATE> 13/10/2020
+DATE> 2020/10/13
 LANG> en
 TYPE> blog
 
 TITLE> dunno #1
 p> <img src="zsources/blog/img/762897892603199488.png">
 
-DATE> 6/10/2020
+DATE> 2020/10/06
 LANG> en
 TYPE> art
 
@@ -361,7 +367,7 @@ eu ganhei pp e parece que a maioria perdeu bastante pp, por isso acabei subindo 
 isso provavelmente é pq muita gente tinha plays de farm, e agora essas plays não valem nada
 como por exemplo as plays em <a href="https://osu.ppy.sh/beatmapsets/928431#taiko/1939224">Nog - Aether Ritual (Ritual Oni)</a>
 
-DATE> 24/09/2020
+DATE> 2020/09/24
 LANG> pt
 TYPE> taiko
 
@@ -380,7 +386,7 @@ final
 <img src="zsources/blog/img/757729747953385472.png">
 
 <a href="https://twitter.com/key_999/status/1279252663549325312">reference i used</a>
-DATE> 22/09/2020
+DATE> 2020/09/22
 TYPE> art
 LANG> en
 
@@ -390,7 +396,7 @@ p>
 <img src="zsources/blog/img/751430322490703946.png">
 <img src="zsources/blog/img/751430540380471326.png">
 <img src="zsources/blog/img/751430898523701248.png">
-DATE> 04/09/2020
+DATE> 2020/09/04
 TYPE> taiko
 LANG> pt
 
@@ -399,7 +405,7 @@ p> animation is so cool, even if i don't like css that much
 the button "back to top" is the learning object
 i can maybe use this for obs transitions or overlays... i wonder if someone will someday hire me as tech helper with obs stuff for streaming
 
-DATE> 02/09/2020
+DATE> 2020/09/02
 TYPE> blog
 LANG> en
 
@@ -418,7 +424,7 @@ i'll not mess my head up with this thing at 3 AM
 
 edit: and i actually edited the css... so images aren't that large (like 1000px)
 
-DATE> 02/09/2020
+DATE> 2020/09/02
 TYPE> blog
 LANG> en
 
@@ -429,7 +435,7 @@ I did it just today, I feel proud of finally doing something from start to finis
 But also... I just wanna go sleep...
 
 <img src="https://media.tenor.com/images/61dcf7e4d65440b06c8c901ace9924a6/tenor.gif">
-DATE> 31/08/2020
+DATE> 2020/08/31
 
 TYPE> development
 LANG> en
@@ -446,7 +452,7 @@ aaaaaaaaaa
 
 edit (15/09/2020): aparentemente essa imagem fica mudando dependendo da foto que eu coloco de perfil no <a href="https://osu.ppy.sh/users/4689256">osu!</a>
 
-DATE> 28/08/2020
+DATE> 2020/08/28
 
 TYPE> testing
 LANG> pt
@@ -460,7 +466,7 @@ primeira play de 100pp
 99.36% acc
 
 TYPE> taiko
-DATE> 19/08/2020
+DATE> 2020/08/19
 LANG> pt
 
 
@@ -479,7 +485,7 @@ e esse quase fc em uma de 2.97*
 esse pass tmbm
 
 TYPE> taiko
-DATE> 11/08/2020
+DATE> 2020/08/11
 LANG> pt
 
 `;

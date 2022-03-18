@@ -23,7 +23,7 @@ const data = {
             { "gameName": "Syphon Filter", "notes": "PS1" },
             { "gameName": "Porsche Challenge", "notes": "PS1" },
             { "gameName": "Need for Speed: Underground 2", "notes": null },
-            { "gameName": "Burnout 3: Takedown", "notes": "demo in NFSU2" },
+            { "gameName": "Burnout 3: Dominator", "notes": "demo from NFSU2" },
             { "gameName": "Pro Evolution Soccer 2011", "notes": null },
             { "gameName": "Gran Turismo 4", "notes": null },
             { "gameName": "Sonic Riders: Zero Gravity", "notes": null },
@@ -54,7 +54,8 @@ const data = {
             { "gameName": "Cooking Mama", "notes": null },
             { "gameName": "Yu-Gi-Oh! World Championship 2008", "notes": null },
             { "gameName": "Ninjatown", "notes": null },
-            { "gameName": "Nintendogs", "notes": null }
+            { "gameName": "Nintendogs", "notes": null },
+            { "gameName": "Pokémon Mystery Dungeon: Explorers of Sky", "notes": "played recently" }
         ],
         [
             { "gameName": "Sonic Rivals 2", "notes": null },
@@ -122,7 +123,8 @@ const data = {
             { "gameName": "Ōkami", "notes": "HD PC port there's on steam" },
             { "gameName": "Sid Meier's Civilization® V", "notes": null },
             { "gameName": "Cuphead", "notes": null },
-            { "gameName": "Portal", "notes": null }
+            { "gameName": "Portal", "notes": null },
+            { "gameName": "Muse Dash", "notes": null }
         ],
         [
             { "gameName": "Undertale", "notes": "Ataque da Casa" },
@@ -141,11 +143,14 @@ const data = {
             { "gameName": "Super Mario 64", "notes": "Velberan, Cheese" },
             { "gameName": "Super Mario Sunshine", "notes": "Velberan" },
             { "gameName": "Mirror's Edge Catalyst", "notes": "PewDiePie" },
-            { "gameName": "Muse Dash", "notes": "Eterno" },
             { "gameName": "Pokémon Battle Revolution", "notes": "Eterno" },
             { "gameName": "Super Mario 3D World", "notes": "HardCapone" },
             { "gameName": "Star Fox Zero", "notes": "Argick" },
-            { "gameName": "Wilmot's Warehouse", "notes": "Mathias" }
+            { "gameName": "Wilmot's Warehouse", "notes": "Mathias" },
+            { "gameName": "Need for Speed: Underground", "notes": "Eterno" },
+            { "gameName": "Burnout Paradise", "notes": "Eterno" },
+            { "gameName": "Portal 2", "notes": "Abdo" },
+            { "gameName": "Vampire Survivors", "notes": "3111" }
         ]
 
     ]

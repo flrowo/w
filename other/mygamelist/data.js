@@ -27,7 +27,10 @@ const data = {
             { "gameName": "Pro Evolution Soccer 2011", "notes": null },
             { "gameName": "Gran Turismo 4", "notes": null },
             { "gameName": "Sonic Riders: Zero Gravity", "notes": null },
-            { "gameName": "Guitar Hero III: Legends of Rock", "notes": null }
+            { "gameName": "Guitar Hero III: Legends of Rock", "notes": null },
+            { "gameName": "Tony Hawk's Pro Skater 4", "notes": null },
+            { "gameName": "The SpongeBob SquarePants Movie", "notes": null },
+            { "gameName": "Lego Star Wars: The Complete Saga", "notes": null }
         ],
         [
             { "gameName": "Mario Hoops 3-on-3", "notes": null },

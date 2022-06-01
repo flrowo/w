@@ -153,7 +153,8 @@ const data = {
             { "gameName": "Need for Speed: Underground", "notes": "Eterno" },
             { "gameName": "Burnout Paradise", "notes": "Eterno" },
             { "gameName": "Portal 2", "notes": "Abdo" },
-            { "gameName": "Vampire Survivors", "notes": "3111" }
+            { "gameName": "Vampire Survivors", "notes": "3111" },
+            { "gameName": "Kirby and the Forgotten Land", "notes": "JohneAwesome" }
         ]
 
     ]

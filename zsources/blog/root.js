@@ -2,6 +2,13 @@ const contentText =
     `
 
 ---------------------------------------------------------------------------------------------------
+
+TITLE> my (simple) taiko skin release
+p> <a href="./zsources/files/osuskin/flr's simple.osk" download>link</a> for it
+DATE> 2022/07/04
+LANG> en
+TYPE> taiko
+
 TITLE> i started streaming regularly
 p> it's been more than a month now, but i started streaming at <a href="https://www.twitch.tv/flrowo">my twitch channel</a>
 my idea is to make live content as well as edit the content created from those streams to post on <a href="https://www.youtube.com/channel/UCUiaHldlB2GY5ovjRE6KFUQ">my youtube channel</a>

@@ -274,9 +274,9 @@ TYPE> taiko
 
 TITLE> i made the dropped minecraft item motion with just C# code
 p> i think what i like about programming is making abstract challenges come true.
-there is <a href="https://calmylake.github.io/w/other/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
+there is <a href="https://flrowo.github.io/w/other/minecraft-floating-item/">this thing</a> i made using unity for the graphics and C# for the physics. the thing is nothing more than a rotation and a floating based in a <b>periodic movement</b>. it feels really solid at +60fps...
 but here is a review if you can't run WebGL:
-<img src="https://calmylake.github.io/w/other/minecraft-floating-item/preview.gif"></img>
+<img src="https://flrowo.github.io/w/other/minecraft-floating-item/preview.gif"></img>
 
 
 DATE> 2020/11/05
@@ -437,7 +437,7 @@ LANG> en
 
 
 TITLE> I made an osu!Taiko Hack - hackdetaco
-p> There is more info at <a href="https://github.com/calmylake/hackdetaco">github.com/calmylake/hackdetaco</a>.
+p> There is more info at <a href="https://github.com/flrowo/hackdetaco">github.com/flrowo/hackdetaco</a>.
 I did it just today, I feel proud of finally doing something from start to finish. 
 But also... I just wanna go sleep...
 

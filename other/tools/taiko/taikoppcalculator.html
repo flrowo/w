@@ -14,7 +14,8 @@
 
 <body>
     <p>using numbermaniac's <a href="https://osu.ppy.sh/community/forums/topics/472288">post</a> and <a href="https://mon.im/taikopp/">this calculator</a> as references</p>
-    <!--map id: <input id="id" value="1202930"> <input type="button" value="load" onclick="loadmap();">-->
+    map id (not working): <input id="id" value="2505088"> <input type="button" value="load" onclick="loadmap();">
+    <br><br> password: <input type="password" id="password">
     <br><br><br><br> star rating (with DT/HT): <input id="sr" value="5">
     <br><br> max combo: <input id="notes" value="1000">
     <br><br> OD (without DT/HT): <input id="od" value="6">
@@ -29,10 +30,52 @@
     <br>HT <input type="checkbox" id="HT">
     <br>NF <input type="checkbox" id="NF">
     <br><br>
-    <input type="button" value="go" onclick="calculatePP();">
+    <!--<input type="button" value="go" onclick="calculatePP();">-->
     <span id="output"></span>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        (() => {
+                console.log("a");
+            let inputs = document.getElementsByTagName("input");
+            let i = inputs.length-1;
+            while(i >= 0){
+                inputs[i].setAttribute("onchange", "updateForm()");
+                i--;
+            }
+
+        })();
+
+        function updateForm() {
+            calculatePP();
+        }
+
+        function updateAccuracyInputs(n) {
+            if (n == 0) {
+
+            } else if (n == 1) {
+
+            }
+        }
+
+        function loadmap() {
+            console.log("started to load");
+            $.ajax({
+                url: "https://osu.ppy.sh/api/get_beatmaps?k=914d25d7513fffc826f00e27e1ac21aad5301"+document.getElementById("password").value+"5&b="+document.getElementById("id").value,
+                dataType: "json",
+                success: function(result) {
+                    document.getElementById("sr").value = result[0].difficultyrating;
+                    document.getElementById("notes").value = result[0].max_combo;
+                    document.getElementById("od").value = result[0].diff_overall;
+
+                    updateForm();
+                },
+                error: function(){
+                    alert("not working");
+                }
+            });
+        }
+    </script>
     <script>
         var isActiveInputAcc = true;
 
@@ -132,16 +175,7 @@
             document.getElementById("output").innerHTML = Math.round(TotalValue * 100) / 100 + " pp";
         }
 
-        function loadmap() {
-            console.log("started to load");
-            $.ajax({
-                url: "https://osu.ppy.sh/beatmapsets/" + document.getElementById("id").value,
-                success: function(result) {
-                    //get variables' values here from web scrap
-                    console.log((".beatmap-basic-stats").html(result));
-                }
-            });
-        }
+        updateForm();
     </script>
 </body>
 

@@ -66,7 +66,7 @@
 		var animes;
 		$.ajax({
 			async: false,
-			url: 'https://raw.githubusercontent.com/maylake/db/master/app/animes.js',
+			url: 'https://raw.githubusercontent.com/flrowo/db/master/app/animes.js',
 			type: 'GET',
 			dataType: 'text',
 			success: (data) => {
@@ -83,7 +83,7 @@
 	<script>
 	
 	$(document).ready($.ajax({
-		url: "https://api.github.com/repos/calmylake/db/commits",
+		url: "https://api.github.com/repositories/224334513/commits",
 		dataType: "JSON",
 		success: function(data){
 			var datetime = data[0].commit.author.date;

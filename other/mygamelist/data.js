@@ -127,6 +127,8 @@ const data = {
             { "gameName": "Sid Meier's Civilization® V", "notes": null },
             { "gameName": "Cuphead", "notes": null },
             { "gameName": "Portal", "notes": null },
+            { "gameName": "Overwatch", "notes": null },
+            { "gameName": "Overwatch 2", "notes": null },
             { "gameName": "Muse Dash", "notes": null }
         ],
         [

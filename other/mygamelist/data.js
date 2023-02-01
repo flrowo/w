@@ -129,7 +129,9 @@ const data = {
             { "gameName": "Portal", "notes": null },
             { "gameName": "Overwatch", "notes": null },
             { "gameName": "Overwatch 2", "notes": null },
-            { "gameName": "Muse Dash", "notes": null }
+            { "gameName": "Muse Dash", "notes": null },
+            { "gameName": "Golf It!", "notes": null },
+            { "gameName": "Titan Souls", "notes": null }
         ],
         [
             { "gameName": "Undertale", "notes": "Ataque da Casa" },

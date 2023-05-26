@@ -143,7 +143,7 @@ const data = {
             { "gameName": "Pokemon Sword", "notes": "JohneAwesome" },
             { "gameName": "Pokemon Platinum", "notes": "JohneAwesome" },
             { "gameName": "Pokemon Omega Ruby", "notes": "JohneAwesome" },
-            { "gameName": "Phoenix Wright: Phoenix Wright: Ace Attorney Trilogy", "notes": "JohneAwesome" },
+            { "gameName": "Phoenix Wright: Ace Attorney Trilogy", "notes": "JohneAwesome" },
             { "gameName": "The Great Ace Attorney: Adventures", "notes": "JohneAwesome" },
             { "gameName": "Scott Pilgrim Vs. The World: The Game", "notes": "Velberan" },
             { "gameName": "Super Mario Bros.", "notes": "Velberan" },
@@ -159,7 +159,10 @@ const data = {
             { "gameName": "Portal 2", "notes": "Abdo" },
             { "gameName": "Vampire Survivors", "notes": "3111" },
             { "gameName": "Kirby and the Forgotten Land", "notes": "JohneAwesome" },
-            { "gameName": "Baba is You", "notes": "Thiago" }
+            { "gameName": "Baba is You", "notes": "Thiago" },
+            { "gameName": "Danganronpa: Trigger Happy Havoc", "notes": "Eterno and JohneAwesome" },
+            { "gameName": "Danganronpa 2: Goodbye Despair", "notes": "JohneAwesome" },
+            { "gameName": "Danganronpa V3: Killing Harmony", "notes": "JohneAwesome" }
         ]
 
     ]

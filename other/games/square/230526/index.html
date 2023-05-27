@@ -19,10 +19,11 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
+      let prefix = "square";
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/_web.data",
-        frameworkUrl: "Build/_web.framework.js",
-        codeUrl: "Build/_web.wasm",
+        dataUrl: "Build/"+prefix+".data",
+        frameworkUrl: "Build/"+prefix+".framework.js",
+        codeUrl: "Build/"+prefix+".wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "platformer maybe",

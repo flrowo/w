@@ -3,6 +3,15 @@ const contentText =
 
 ---------------------------------------------------------------------------------------------------
 
+TITLE> game "square" is available
+p> it is possible to play via browser or downloading (only for windows)
+check it out <a href="other/games/square">here</a>
+
+i may update it in the future to have sounds and music, make more levels and game mechanics
+DATE> 2023/05/28
+LANG> en
+TYPE> games, development, art, design
+
 TITLE> my (simple) taiko skin release
 p> <a href="./zsources/files/osuskin/flr's simple.osk" download>link</a> for it
 DATE> 2022/07/04

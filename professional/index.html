@@ -3,10 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Portfolio and Resume</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="resume/english.html">English Resume</a><br>
-    <a href="resume/portuguese.html">Currículo em Português</a>
+    <div class="header">
+        <div class="left_content">
+            <div class="logo"><a href="index.html"><img src="src/flr logo.png"></a></div>
+            <div>jooj</div>
+        </div>
+        <div class="right_content">
+            <div class="header_element"><a href="index.html">Home</a></div>
+            <div class="header_element"><a href="blog.html">Blog</a></div>
+            <div class="header_element"><a href="social.html">Social/Contact</a></div>
+        </div>
+        <!--
+        <div class="header_element">
+            <div>select your language:</div>
+            <div id="lang1" class="flag us"></div>
+            <div id="lang2" class="flag br"></div>
+            <div id="lang3" class="flag jp"></div>
+            <div id="lang4" class="flag sp"></div>
+        </div>
+        -->
+    </div>
+    <div class="sbody">
+        <div class="sbody_element title">
+                <h1>Everything here</h1>
+                <p>was made by me</p>
+        </div>
+        <div class="sbody_element elEven">
+            <div class="elText">
+                <h1>imgtest_long.jpg</h1>
+                <p>imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg imgtest_long.jpg </p>    
+            </div>
+            <div class="elImg">
+                <img src="src/imgtest_long.jpg">
+            </div>
+        </div>
+        <div class="sbody_element elOdd">
+            <div class="elText">
+                <h1>imgtest_tall.jpg</h1>
+                <p>imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg imgtest_tall.jpg </p>
+            </div>
+            <div class="elImg">
+                <img src="src/imgtest_tall.jpg">
+            </div>
+        </div>
+        <div class="sbody_element elEven">
+            <div class="elText">
+                <h1>src/imgtest_long_small.jpg</h1>
+                <p>src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg src/imgtest_long_small.jpg</p>
+            </div>
+            <div class="elImg">
+                <img src="src/imgtest_long_small.jpg">
+            </div>
+        </div>
+        <div class="sbody_element elOdd">
+            <div class="elText">
+                <h1>imgtest_tall_small.jpg</h1>
+                <p>imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg imgtest_tall_small.jpg </p>
+            </div>
+            <div class="elImg">
+                <img src="src/imgtest_tall_small.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_element hoverPopup discord" onclick="setClipboard('flrowo')">
+            <div><span class="popup">flrowo</span>
+            <a>Discord</a></div>
+        </div>
+        <div class="footer_element hoverPopup email" onclick="setClipboard('joaopedrolibonati@gmail.com')">
+            <div><span class="popup">joaopedrolibonati@gmail.com</span>
+            <a>Email</a></div>
+        </div>
+    </div>
+
+    <script>
+        // https://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard
+        function setClipboard(value) {
+            var tempInput = document.createElement("input");
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert(`"${value}" copied to clipboard!`);
+        }
+    </script>
 </body>
 </html>

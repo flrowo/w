@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		</style>
+	</head>
+	<body>
+		<script>
+			//sebola pp 23-06-02
+			let playsArray = [
+				789,722,718,715,700,665,654,643,643,637, 636,627,626,626,618,601,597,592,581,576,
+				574,570,570,562,561,555,549,546,542,537, 537,537,533,529,528,521,520,520,520,518,
+				515,514,514,513,512,511,511,508,508,506, 506,505,504,501,500,495,495,489,489,489,
+				488,488,487,486,484,483,481,477,476,476, 473,471,467,467,466,461,453,451,446,445,
+				445,443,439,439,436,430,430,429,428,427, 426,425,425,424,423,419,417,415,413,408,
+			];
+
+			let tempPlaysArray = [];
+
+			if(playsArray.length < 100){
+				alert("vai da nao. menor que 100 esse array.length ai mano");
+			}
+
+			function calculatePPWithArray(arr){
+				let ppSum = 0;
+				let i = 0;
+				let wPP = [];
+				while(arr.length > i){
+					wPP.push(arr[i]*Math.pow(0.95,i));
+					i++;
+				}
+				i=0;
+				while(wPP.length > i){
+					ppSum += wPP[i];
+					i++;
+				}
+				return ppSum;
+			}
+
+			function putNewPPValue(newPPValue){
+				let i = 0;
+				let valueIndex;
+				while(i < tempPlaysArray.length){
+					if(tempPlaysArray[i] < newPPValue) break;
+					i++;
+				}
+				console.log(`put ${newPPValue} at position: ${i}`);
+				tempPlaysArray.splice(i, 0, newPPValue);
+				tempPlaysArray.pop();
+				console.log(tempPlaysArray);
+			}
+
+			function main(){
+				let ppValue = parseFloat(document.getElementById("ppValue").value);
+				if(Number.isNaN(ppValue)) {alert("not a number"); return;}
+				putNewPPValue(ppValue);
+				
+				let ppDifference = calculatePPWithArray(tempPlaysArray) - calculatePPWithArray(playsArray);
+				ppDifference = ppDifference.toFixed(2);
+
+				document.getElementById("return").innerHTML = ppDifference;
+			}
+
+			function reset(){
+				tempPlaysArray = playsArray.map((x)=>x);
+				document.getElementById("result").innerHTML = "";
+			}
+			
+			reset();
+			
+		</script>
+		<input type="text" id="ppValue" placeholder="pp value">
+		<button onclick="main();">run</button>
+		<button onclick="reset();">reset</button><br><br>
+		<div id="result"></div>
+	</body>
+</html>

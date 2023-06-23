@@ -1,3 +1,8 @@
+:root{
+    --header-footer-height: 60px;
+    --content-element-rotation: 10deg;
+}
+
 *{
     margin: 0;
 }
@@ -13,10 +18,13 @@ body{
 }
 
 .header{
+    z-index: 10;
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     background-color: rgb(54, 54, 56);
-    height: 60px;
+    height: var(--header-footer-height);
     width: 100%;
 }
 
@@ -51,56 +59,64 @@ body{
     align-content: space-around;
 }
 
-.sbody{
+.content{
     width: auto;
     height: auto;
     overflow: hidden;
-    margin: 10px 20% 10px 20%;
+    margin: var(--header-footer-height) 20% var(--header-footer-height) 20%;
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 } 
 
-.sbody_element{
+.content_element{
+    --margin: 10px;
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
     background-color: rgb(53, 53, 55);
     border-radius: 5px;
     padding: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     width: 100%;
     display: flex;
     flex-direction: row;
-} 
+    transition: all 0.2s ease-in-out 0s;
+    cursor: pointer;
+}
 
 .elEven{
-    
+    transform: rotate3d(1, 1, 0, var(--content-element-rotation));
+}.elEven:hover{
+    transform: rotate3d(-1, 1, 0, calc(var(--content-element-rotation)*1.5));
 }
 .elOdd{
     flex-direction: row-reverse;
+    transform: rotate3d(-1, 1, 0, var(--content-element-rotation));
+}.elOdd:hover{
+    transform: rotate3d(1, 1, 0, calc(var(--content-element-rotation)*1.5));
 }
 
-.sbody_element h1{
+.content_element h1{
     margin: 5px 10px 10px 10px;
 }
-.sbody_element p{
+.content_element p{
     margin: 10px 10px 10px 50px;
 }
-.sbody_element img{
+.content_element img{
     width: auto;
     height: 30vh;
 }
 @media (max-width:1100px) {
-    .sbody_element img{
+    .content_element img{
         margin: 10px 0 10px 0;
         height: auto;
         width: 30vh;
     }
 }
-.sbody_element .elText{
+.content_element .elText{
     flex-grow: 1;
 }
-.sbody_element .elImg{
+.content_element .elImg{
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -124,8 +140,11 @@ a{
 
 
 .footer{
+    --height-offset: 10px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    height: 50px;
+    height: calc(var(--header-footer-height) - var(--height-offset));
     display: flex;
     justify-content: space-evenly;
     align-content: center;
@@ -231,6 +250,6 @@ a{
 
 /* MOBILE */
 @media (max-width:1100px) {
-    .sbody{ margin: 10px; }
-    .sbody_element{ flex-direction: column; }
+    .content{ margin: var(--header-footer-height) 10px var(--header-footer-height) 10px; }
+    .content_element{ flex-direction: column; }
 }

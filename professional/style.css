@@ -50,7 +50,12 @@ body{
     margin: 0 10px;
     display: flex;
     align-content: flex-end;
-}
+}/*@media (max-width:1100px){
+    .right_content{
+        display: ;
+        visibility: hidden;
+    }
+}*/
 .header_element{
     margin: 10px;
     display: flex;
@@ -87,13 +92,15 @@ body{
 .elEven{
     transform: rotate3d(1, 1, 0, var(--content-element-rotation));
 }.elEven:hover{
-    transform: rotate3d(-1, 1, 0, calc(var(--content-element-rotation)*1.5));
+    transform: rotate3d(-1, 1, 0, var(--content-element-rotation));
+    background-color: rgb(71, 62, 82);
 }
 .elOdd{
     flex-direction: row-reverse;
     transform: rotate3d(-1, 1, 0, var(--content-element-rotation));
 }.elOdd:hover{
-    transform: rotate3d(1, 1, 0, calc(var(--content-element-rotation)*1.5));
+    transform: rotate3d(1, 1, 0, var(--content-element-rotation));
+    background-color: rgb(71, 67, 57);
 }
 
 .content_element h1{
@@ -103,14 +110,17 @@ body{
     margin: 10px 10px 10px 50px;
 }
 .content_element img{
-    width: auto;
-    height: 30vh;
+    --img-size: 300px;
+    max-width: var(--img-size);
+    max-height: var(--img-size);
+    border-radius: 5px;
+    object-fit: cover;
 }
 @media (max-width:1100px) {
     .content_element img{
         margin: 10px 0 10px 0;
         height: auto;
-        width: 30vh;
+        width: 100%;
     }
 }
 .content_element .elText{

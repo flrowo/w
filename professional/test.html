@@ -4,10 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="test.css">
 </head>
-<body style="margin: 0;">
-    <div class="header" style="margin: 10px; position: fixed; top:0; left:0; width: 100px; height: 100px; background-color: brown;"></div>
-    <div class="content" style="display:flex; width: 100%; height: 2000px; background-color: cadetblue;"></div>
-    
+<body>
+    <div class="menu_holder">
+        <div class="menu" onclick="openMenu();"></div>
+    </div>
+    <div class="menu_dropdown">
+        <!--
+            MAKE WHOLE DIV SELECTABLE FOR EACH
+            USING JAVASCRIPT: https://www.shecodes.io/athena/11459-how-to-make-a-div-clickable-in-javascript
+        -->
+        <div class="menu_item"><a href="#">Games</a></div>
+        <div class="menu_item"><a href="#">Art</a></div>
+        <div class="menu_item"><a href="#">e-Sports</a></div>
+        <div class="menu_item"><a href="#">Programming</a></div>
+        <div class="menu_item"><a href="#">Social</a></div>
+    </div>
+    <div class="content">
+        
+    </div>
+    <script>
+        function openMenu() {
+            let menu_active = "menu_active"; let menu = document.getElementsByClassName("menu")[0];
+            let content_active = "filter-unfocus"; let content = document.getElementsByClassName("content")[0];
+            let menu_dropdown_active = "menu_dropdown_active"; let menu_dropdown = document.getElementsByClassName("menu_dropdown")[0];
+
+            if(!menu.classList.contains(menu_active)) {
+                menu.classList.add(menu_active);
+                content.classList.add(content_active);
+                menu_dropdown.classList.add(menu_dropdown_active);
+            }
+            else{
+                menu.classList.remove(menu_active);
+                content.classList.remove(content_active);
+                menu_dropdown.classList.remove(menu_dropdown_active);
+            }
+        }
+
+        let evenBool = false;
+        let menu_items = document.getElementsByClassName("menu_dropdown")[0].children;
+        let intUP = 20;
+        for(let i = 0; i < menu_items.length; i++){
+            menu_items[i].style.transform = `rotate3d(1, 1, 0, ${intUP}deg) scale3d(${intUP/20/2+0.5},${intUP/20/2+0.5},1)`;
+            intUP += 2;
+            menu_items[i].style.color="#FFFFFF";
+            // if(!evenBool) menu_items[i].classList.add("menu_item_odd");
+            // else menu_items[i].classList.add("menu_item_even");
+            // evenBool = !evenBool;
+        }
+
+    </script>
 </body>
 </html>

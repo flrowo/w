@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>katsudon game</title>
+</head>
+<style>
+    :root{
+        --don-color: rgb(255, 30, 0);
+        --katsu-color: rgb(0, 136, 255);
+    }
+    *{
+        margin: 0;
+        overflow: hidden;
+    }
+    body{
+        background-color: black;
+    }
+    .content{
+        width: 500px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        border: solid 1px white;
+    }
+    .playfield{
+        border: solid 1px yellow;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+    }
+
+    .circle{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+    }.cursor{
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        left: 80px;
+    }.don{
+        border: solid 2px rgba(255, 255, 255);
+        background-color: var(--don-color);
+    }.katsu{
+        border: solid 2px rgba(255, 255, 255);
+        background-color: var(--katsu-color);
+    }
+
+    .feedback{
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .feedback_miss{
+        background-color: #F00;
+    }.feedback_fifty{
+        background-color: #FF0;
+    }.feedback_hundred{
+        background-color: #0F0;
+    }
+
+
+    .key-overlay{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        left: 10px;
+        border: solid 1px #FFF;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }.key-light{
+        margin: 1px;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(0, 255, 0);
+        visibility: hidden;
+    }.key-don{
+        background-color: var(--don-color);
+    }.key-katsu{
+        background-color: var(--katsu-color);
+    }.key-active{
+        visibility: visible;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="playfield">
+            <div class="key-overlay">
+                <div id="key-light-D" class="key-light key-katsu key-left"></div>
+                <div id="key-light-F" class="key-light key-don key-left"></div>
+                <div id="key-light-J" class="key-light key-don key-right"></div>
+                <div id="key-light-K" class="key-light key-katsu key-right"></div>
+            </div>
+            <div class="circle cursor"></div>
+        </div>
+    </div>
+    <script>
+        let playfield = document.getElementsByClassName("playfield")[0];
+        let playfieldLength = playfield.offsetWidth;
+        function appendToPlayfield(el) {
+            playfield.appendChild(el);
+        }
+
+        const Feedback = class{
+            static count = 0;
+            #id;
+            // type: miss => 0; 50% => 1; 100% => 2
+            constructor(type){
+                this.#id = "feedback"+(++this.constructor.count);
+                let typeClass = "feedback_miss";
+                if(type == 0){ typeClass = "feedback_miss" }
+                else if(type == 1){ typeClass = "feedback_fifty" }
+                else if(type == 2){ typeClass = "feedback_hundred" }
+
+                let feedbackDiv = document.createElement("div");
+                feedbackDiv.classList.add("feedback");
+                feedbackDiv.classList.add(typeClass);
+                feedbackDiv.id = this.#id;
+                appendToPlayfield(feedbackDiv);
+                let feedbackDuration = setInterval(()=>{
+                    document.getElementById(this.#id).remove();
+                    clearInterval(feedbackDuration);
+                }, 500);
+            }
+        }
+
+        
+
+        const Note = class{
+            static count = 0;
+            #id;
+            #sv;
+            #isDon;
+            #delay;
+            constructor(sv, isDon, delay) {
+                this.#id = "note"+(++this.constructor.count);
+                this.#sv = sv;
+                this.#isDon = isDon;
+                this.#delay = delay;
+
+                // create update loop for this note
+                let noteDiv = document.createElement("div");
+                let noteType;
+                noteDiv.classList.add("circle");
+                if(this.isDon) noteType = "don"; else noteType = "katsu";
+                noteDiv.classList.add(noteType);
+                noteDiv.id = this.#id;
+                appendToPlayfield(noteDiv);
+                
+                let posLeft = playfieldLength+50;
+                let noteUpdate = setInterval(() => {
+                    noteDiv.style.left = posLeft+"px";
+                    posLeft -= sv;
+                    if(parseInt(noteDiv.style.left) < 0){
+                        new Feedback(0);
+                        noteDiv.remove();
+                        clearInterval(noteUpdate);
+                    }
+                }, 10);
+            }
+
+            getId(){ return this.#id; }
+            getSV(){ return this.#sv; }
+            getIsDon(){ return this.#isDon; }
+            getDelay(){ return this.#delay; }
+        }
+
+        new Note(1, true, 100);
+        new Note(2, true, 200);
+        new Note(4, true, 200);
+        new Note(8, true, 200);
+        
+        const KeyClass = class{
+            #id;
+            #letter;
+            #isDon;
+            #htmlElement;
+            #isPressable;
+            #power;
+            constructor(id, letter, isDon, htmlElement) {
+                this.#id = id;
+                this.#letter = letter;
+                this.#isDon = isDon;
+                this.#htmlElement = htmlElement;
+
+                this.#isPressable = true;
+                this.#power = 0;
+            }
+            // power
+            setPower(p){ this.#power = p; }
+            getPower(){ return this.#power; }
+            resetPower(){ this.#power = 10; }
+            
+            // id
+            getId(){ return this.#id; }
+
+            // isDon
+            checkIfIsDon(){ return this.#isDon; }
+
+            // htmlElement
+            getHtmlElement(){ return this.#htmlElement; }
+
+            // isPressable
+            checkIfIsPressable(){ return this.#isPressable }
+            setPressable(){ this.#isPressable = true; }
+            setUnPressable(){ this.#isPressable = false; }
+        }
+
+        let KeyArray = [
+            new KeyClass(68, "D", false, document.getElementById("key-light-D")),
+            new KeyClass(70, "F", true, document.getElementById("key-light-F")),
+            new KeyClass(74, "J", true, document.getElementById("key-light-J")),
+            new KeyClass(75, "K", false, document.getElementById("key-light-K")),
+        ];
+
+        document.onkeydown = (e)=>{
+            for (let i = 0; i < KeyArray.length; i++) {
+                if(e.keyCode == KeyArray[i].getId() && KeyArray[i].checkIfIsPressable()){
+                    KeyArray[i].resetPower();
+                    KeyArray[i].setUnPressable();
+                }
+            }
+        };
+        document.onkeyup = (e)=>{
+            for (let i = 0; i < KeyArray.length; i++) {
+                if(e.keyCode == KeyArray[i].getId()){
+                    KeyArray[i].setPressable();
+                }
+            }
+        };
+
+        let fixedUpdate = setInterval(() => {
+            for (let i = 0; i < KeyArray.length; i++) {
+                if(KeyArray[i].getPower() > 0) {
+                    if(!KeyArray[i].getHtmlElement().classList.contains("key-active")) {
+                        KeyArray[i].getHtmlElement().classList.add("key-active");
+                    }
+                    KeyArray[i].setPower(KeyArray[i].getPower()-1);
+                }
+                else { KeyArray[i].getHtmlElement().classList.remove("key-active"); }
+            }
+
+        }, 10);
+    </script>
+</body>
+</html>

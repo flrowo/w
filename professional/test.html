@@ -15,14 +15,14 @@
             MAKE WHOLE DIV SELECTABLE FOR EACH
             USING JAVASCRIPT: https://www.shecodes.io/athena/11459-how-to-make-a-div-clickable-in-javascript
         -->
-        <div class="menu_item"><a href="#">Games</a></div>
-        <div class="menu_item"><a href="#">Art</a></div>
-        <div class="menu_item"><a href="#">e-Sports</a></div>
-        <div class="menu_item"><a href="#">Programming</a></div>
-        <div class="menu_item"><a href="#">Social</a></div>
+        <div class="menu_item" onclick="menuItemClick('games');"><p>Games</p></div>
+        <div class="menu_item" onclick="menuItemClick('art');"><p>Art</p></div>
+        <div class="menu_item" onclick="menuItemClick('esports');"><p>e-Sports</p></div>
+        <div class="menu_item" onclick="menuItemClick('programming');"><p>Programming</p></div>
+        <div class="menu_item" onclick="menuItemClick('social');"><p>Social</p></div>
     </div>
     <div class="content">
-        
+        <div style="background: url(src/imgtest_long.jpg); height: 100px; width: 100px; background-size: cover; background-position: center;">
     </div>
     <script>
         function openMenu() {
@@ -42,13 +42,39 @@
             }
         }
 
+        function menuItemClick(pageContent) {
+            window.location.href = pageContent+".html";
+        }
+
+        function getRandomRotation(intensity, bothDirections) {
+            let returnString = "";
+            let signNumber;
+            if(bothDirections){
+                signNumber = Math.round(Math.random())*2-1;
+            } else signNumber = 1;
+            let min = 10;
+            let max = 20;
+            let length = max-min;
+            let deg = (Math.random()*length+min)*intensity;
+            returnString = `rotate3d(${signNumber}, 1, 0, ${deg}deg)`;
+            return returnString;
+        }
+
         let evenBool = false;
         let menu_items = document.getElementsByClassName("menu_dropdown")[0].children;
-        let intUP = 20;
+        let rotationItt = 20;
+        let marginLeftItt = 0;
+        let rotationArray = [20, 22, 24, 26, 28];
         for(let i = 0; i < menu_items.length; i++){
-            menu_items[i].style.transform = `rotate3d(1, 1, 0, ${intUP}deg) scale3d(${intUP/20/2+0.5},${intUP/20/2+0.5},1)`;
-            intUP += 2;
-            menu_items[i].style.color="#FFFFFF";
+            rotationArray.push()
+        }
+        for(let i = 0; i < menu_items.length; i++){
+            let randomSpinNumber = Math.round(Math.random())*2-1;
+            menu_items[i].style.transform = getRandomRotation(1.2,true);
+            menu_items[i].getElementsByTagName("p")[0].style.transform = getRandomRotation(1.2,true);
+            menu_items[i].style.marginLeft = `${marginLeftItt}px`;
+            rotationItt = Math.random()*40-20;
+            marginLeftItt += 1;
             // if(!evenBool) menu_items[i].classList.add("menu_item_odd");
             // else menu_items[i].classList.add("menu_item_even");
             // evenBool = !evenBool;

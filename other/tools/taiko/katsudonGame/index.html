@@ -111,16 +111,23 @@
         </div>
     </div>
     <script>
-        let startupTime = new Date().getTime();
-        function getTimestamp() {
+        let bpm = 200;
+        let mapOffset = 0;
+        let startupTime;
+        function getStartupTime() {
+            startupTime = new Date().getTime();
+        }
+        function getTimeNow() {
             return (new Date().getTime() - startupTime);
         }
+        getStartupTime();
 
         let playfield = document.getElementsByClassName("playfield")[0];
         let playfieldLength = playfield.offsetWidth;
         function appendToPlayfield(el) {
             playfield.appendChild(el);
         }
+        let map = [];
 
         const Feedback = class{
             static count = 0;
@@ -151,23 +158,28 @@
                     clearInterval(feedbackDuration);
                 }, 500);
             }
+            destroy(){
+
+            }
         }
         
-        // reference: beatmap_id = 447879
-        let bpm = 224;
         const Note = class{
             static count = 0;
             #id;
             #sv;
             #isDon;
             #hitTimeMs;
+
+            #active = true;
             
+            #noteUpdate;
             #progress = 0;
             constructor(sv, isDon, hitTimeMs) {
+                let bps = bpm/60;
                 this.#id = "note"+(++this.constructor.count);
-                this.#sv = sv*bpm*0.03;
+                this.#sv = sv*bps;
                 this.#isDon = isDon;
-                this.#hitTimeMs = hitTimeMs/10;
+                this.#hitTimeMs = hitTimeMs;
 
                 // create update loop for this note
                 // remember to use z-index with the id value to place early notes on top of late notes
@@ -175,23 +187,48 @@
                 let noteType;
                 noteDiv.classList.add("circle");
                 if(this.#isDon == 0) noteType = "don"; else noteType = "katsu";
+                noteDiv.classList.add("note");
                 noteDiv.classList.add(noteType);
                 noteDiv.id = this.#id;
                 noteDiv.style.zIndex = 99999 - this.constructor.count;
                 appendToPlayfield(noteDiv);
 
-                let cursorPosLeft = window.getComputedStyle(document.getElementById("cursor")).getPropertyValue("left");
-                let posLeft = parseInt(cursorPosLeft) + (this.#sv*(this.#hitTimeMs-getTimestamp()));
-                let noteUpdate = setInterval(() => {
+                // defining offsets
+                let startOffset = 1000;
+                if(this.#id == "note1") console.log("start: "+((this.#hitTimeMs-mapOffset)-getTimeNow()));
+                let noteOffset = this.#sv*(((this.#hitTimeMs-mapOffset)-getTimeNow())/5);
+                let cursorOffset = parseInt(window.getComputedStyle(document.getElementById("cursor")).getPropertyValue("left"));
+                let posLeft = noteOffset + cursorOffset;
+
+                // defining performance
+                let fps = 1000;
+                let intervalBetweenFrames = 1000/fps;
+                
+                // update function
+                let hitTimeMsNow;
+                this.#noteUpdate = setInterval(() => {
+                    hitTimeMsNow = (this.#hitTimeMs-mapOffset)-getTimeNow();
+                    if(this.#id == "note1") console.log("update: "+hitTimeMsNow);
+                    if(hitTimeMsNow <= 1000){
+                        // console.log("eaeeaea");
+                        // console.log("perfect hit for note: "+(!this.getIsDon())? "d": "k");
+                    }
                     noteDiv.style.left = posLeft+"px";
-                    posLeft -= this.#sv;
+                    posLeft -= this.#sv*intervalBetweenFrames;
                     if(parseInt(noteDiv.style.left) < 0){
                         new Feedback(0);
-                        noteDiv.remove();
-                        clearInterval(noteUpdate);
+                        this.destroy();
                     }
-                }, 10);
+                }, intervalBetweenFrames);
             }
+            destroy(){
+                if(!this.#active) return;
+                document.getElementById(this.#id).remove();
+                clearInterval(this.#noteUpdate);
+                this.#active = false;
+            }
+
+            isActive(){ return this.#active; }
 
             getId(){ return this.#id; }
             getSV(){ return this.#sv; }
@@ -243,10 +280,19 @@
         ];
 
         document.onkeydown = (e)=>{
-            for (let i = 0; i < KeyArray.length; i++) {
-                if(e.keyCode == KeyArray[i].getId() && KeyArray[i].checkIfIsPressable()){
-                    KeyArray[i].resetPower();
-                    KeyArray[i].setUnPressable();
+            if(e.keyCode == 192 || e.keyCode == 82){
+                console.log("eae");
+                map.forEach(noteEl => {
+                    noteEl.destroy();
+                });
+                getStartupTime();
+                start();
+            } else{
+                for (let i = 0; i < KeyArray.length; i++) {
+                    if(e.keyCode == KeyArray[i].getId() && KeyArray[i].checkIfIsPressable()){
+                        KeyArray[i].resetPower();
+                        KeyArray[i].setUnPressable();
+                    }
                 }
             }
         };
@@ -258,47 +304,129 @@
             }
         };
 
-        // let tempIsDon = true;
-        // let tempLengthNotes = 3;
-        // for (let i = 0; i < tempLengthNotes; i++) {
-        //     let sv = 1 + i;
-        //     if(i%2 == 0 && i != 0) tempIsDon = !tempIsDon;
-        //     let isDon;
-        //     if(tempIsDon) isDon = 0; else isDon = 1;
-            
-        //     new Note(1, isDon, 100*i+100);
-        // }
-        // new Note(2.2, 1, 100);
-        // new Note(2.3, 0, 100);
-        // new Note(2.4, 0, 100);
-        // new Note(2.5, 1, 100);
-        // new Note(2.6, 1, 100);
-        // new Note(2.7, 0, 100);
-        // new Note(2.8, 0, 100);
-        // new Note(2.9, 0, 100);
-        // new Note(3, 0, 100);
+        function start() {
+            bpm = 145;
+            let sv;
+            sv = 1.05;
+            map.push(new Note(sv, 0, 554));
+            map.push(new Note(sv, 1, 760));
+            map.push(new Note(sv, 0, 864));
+            map.push(new Note(sv, 1, 1381));
+            map.push(new Note(sv, 0, 1588));
+            map.push(new Note(sv, 1, 1691));
+            map.push(new Note(sv, 0, 1795));
+            map.push(new Note(sv, 0, 2002));
+            map.push(new Note(sv, 1, 2209));
+            map.push(new Note(sv, 0, 2347));
+            map.push(new Note(sv, 1, 2485));
+            map.push(new Note(sv, 0, 2622));
+            map.push(new Note(sv, 0, 2829));
+            map.push(new Note(sv, 1, 3036));
+            map.push(new Note(sv, 0, 3174));
+            map.push(new Note(sv, 1, 3243));
+            map.push(new Note(sv, 0, 3312));
+            map.push(new Note(sv, 0, 3381));
+            map.push(new Note(sv, 1, 3450));
+            map.push(new Note(sv, 0, 3554));
+            map.push(new Note(sv, 1, 3657));
+            sv = 1.1;
+            map.push(new Note(sv, 0, 3864));
+            map.push(new Note(sv, 1, 4071));
+            map.push(new Note(sv, 1, 4174));
+            map.push(new Note(sv, 0, 4691));
+            map.push(new Note(sv, 1, 4898));
+            map.push(new Note(sv, 1, 5002));
+            map.push(new Note(sv, 0, 5105));
+            map.push(new Note(sv, 0, 5209));
+            map.push(new Note(sv, 1, 5312));
+            map.push(new Note(sv, 0, 5416));
+            map.push(new Note(sv, 1, 5519));
+            map.push(new Note(sv, 0, 5657));
+            map.push(new Note(sv, 0, 5726));
+            sv = 1.09;
+            map.push(new Note(sv, 0, 5795));
+            sv = 1.08;
+            map.push(new Note(sv, 1, 5933));
+            sv = 1.07;
+            map.push(new Note(sv, 0, 6071));
+            sv = 1.06;
+            map.push(new Note(sv, 1, 6209));
+            sv = 1.05;
+            map.push(new Note(sv, 0, 6347));
+            sv = 1.04;
+            map.push(new Note(sv, 0, 6450));
+            sv = 1.03;
+            map.push(new Note(sv, 1, 6554));
+            sv = 1.02;
+            map.push(new Note(sv, 1, 6657));
+            sv = 1.01;
+            map.push(new Note(sv, 0, 6760));
+            map.push(new Note(sv, 0, 6967));
+            sv = 1;
+            map.push(new Note(sv, 1, 7174));
+        }
 
-        // reference: beatmap_id = 447879
-        new Note(1, 1, 631);
-        new Note(1, 0, 764);
-        new Note(1, 0, 1032);
-        new Note(1, 0, 1166);
-        new Note(1, 1, 1434);
-        new Note(1, 0, 1702);
-        new Note(1, 0, 1970);
-        new Note(1, 1, 2238);
-        new Note(1, 0, 2773);
-        new Note(1, 1, 3041);
-        new Note(1, 0, 3309);
-        new Note(1, 0, 3577);
-        new Note(1, 1, 3845);
-        new Note(1, 1, 4648);
-        new Note(1, 1, 4916);
-        new Note(1, 0, 5184);
-        new Note(1, 1, 5452);
-        new Note(1, 0, 5720);
-        new Note(1, 0, 5988);
-        new Note(1, 1, 6256);
+        // function start() {
+        //     bpm = 120;
+        //     mapOffset = 7440;
+        //     let sv;
+        //     sv = 1.5;
+        //     map.push(new Note(sv, 0, 8440));
+        //     map.push(new Note(sv, 0, 8690));
+        //     map.push(new Note(sv, 1, 8940));
+        //     map.push(new Note(sv, 1, 9190));
+        //     map.push(new Note(sv, 1, 9315));
+        //     map.push(new Note(sv, 0, 9440));
+        //     map.push(new Note(sv, 0, 9690));
+        //     map.push(new Note(sv, 1, 9940));
+        //     map.push(new Note(sv, 0, 10190));
+        //     map.push(new Note(sv, 1, 10315));
+        //     map.push(new Note(sv, 0, 10440));
+
+        //     map.push(new Note(sv, 0, 10690));
+        //     map.push(new Note(sv, 0, 10815));
+        //     map.push(new Note(sv, 1, 10940));
+
+        //     map.push(new Note(sv, 1, 11190));
+        //     map.push(new Note(sv, 1, 11315));
+        //     map.push(new Note(sv, 0, 11440));
+        //     map.push(new Note(sv, 1, 11565));
+        //     map.push(new Note(sv, 0, 11690));
+        //     map.push(new Note(sv, 1, 11815));
+        //     map.push(new Note(sv, 1, 11940));
+        //     map.push(new Note(sv, 0, 12065));
+        //     map.push(new Note(sv, 0, 12127));
+        //     map.push(new Note(sv, 0, 12190));
+        //     map.push(new Note(sv, 0, 12252));
+        //     map.push(new Note(sv, 0, 12315));
+        //     map.push(new Note(sv, 1, 12440));
+        //     map.push(new Note(sv, 0, 12690));
+        //     map.push(new Note(sv, 1, 12940));
+        //     map.push(new Note(sv, 0, 13065));
+        //     map.push(new Note(sv, 1, 13190));
+        //     map.push(new Note(sv, 1, 13315));
+        //     map.push(new Note(sv, 0, 13440));
+        //     map.push(new Note(sv, 0, 13690));
+
+        //     map.push(new Note(sv, 1, 13940));
+        //     map.push(new Note(sv, 0, 14190));
+        //     map.push(new Note(sv, 1, 14440));
+        //     map.push(new Note(sv, 1, 14690));
+
+        //     map.push(new Note(sv, 0, 14940));
+        //     map.push(new Note(sv, 0, 15065));
+        //     map.push(new Note(sv, 1, 15190));
+        //     map.push(new Note(sv, 1, 15315));
+        //     map.push(new Note(sv, 0, 15440));
+
+        //     map.push(new Note(sv, 0, 15690));
+        //     map.push(new Note(sv, 0, 15815));
+        //     map.push(new Note(sv, 1, 15940));
+
+        //     map.push(new Note(sv, 1, 16190));
+        //     map.push(new Note(sv, 1, 16315));
+        //     map.push(new Note(sv, 0, 16440));
+        // }
 
         let fixedUpdate = setInterval(() => {
             for (let i = 0; i < KeyArray.length; i++) {
@@ -312,6 +440,8 @@
             }
 
         }, 10);
+
+        window.addEventListener("load", start);
 
     </script>
 </body>

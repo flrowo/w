@@ -38,19 +38,20 @@
     .circle{
         width: 50px;
         height: 50px;
+        border: solid 2px rgba(255, 255, 255);        
         border-radius: 50%;
         position: absolute;
         right: 0;
     }.cursor{
+	    width: 55px;
+        height: 55px;
         border: solid 1px rgba(255, 255, 255, 0.3);
         background-color: rgba(255, 255, 255, 0.2);
         position: absolute;
         left: 80px;
     }.don{
-        border: solid 2px rgba(255, 255, 255);
         background-color: var(--don-color);
     }.katsu{
-        border: solid 2px rgba(255, 255, 255);
         background-color: var(--katsu-color);
     }
 
@@ -58,8 +59,9 @@
         width: 10px;
         height: 10px;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 140px;
+        left: 104px;
+        opacity: 0.8;
     }
     .feedback_miss{
         background-color: #F00;
@@ -81,7 +83,7 @@
         left: 10px;
         border: solid 1px #FFF;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
+        z-index: 100000;
     }.key-light{
         margin: 1px;
         width: 10px;
@@ -105,10 +107,15 @@
                 <div id="key-light-J" class="key-light key-don key-right"></div>
                 <div id="key-light-K" class="key-light key-katsu key-right"></div>
             </div>
-            <div class="circle cursor"></div>
+            <div id="cursor" class="circle cursor"></div>
         </div>
     </div>
     <script>
+        let startupTime = new Date().getTime();
+        function getTimestamp() {
+            return (new Date().getTime() - startupTime);
+        }
+
         let playfield = document.getElementsByClassName("playfield")[0];
         let playfieldLength = playfield.offsetWidth;
         function appendToPlayfield(el) {
@@ -131,40 +138,53 @@
                 feedbackDiv.classList.add(typeClass);
                 feedbackDiv.id = this.#id;
                 appendToPlayfield(feedbackDiv);
+                
+                let instanceDiv = document.getElementById(this.#id);
+                let top = window.getComputedStyle(instanceDiv).getPropertyValue("top");
+                let left = window.getComputedStyle(instanceDiv).getPropertyValue("left");
+                let randomLength = feedbackDiv.offsetWidth;
+                instanceDiv.style.top = parseInt(top) + (Math.random()*randomLength - randomLength/2)/5 + "px";
+                instanceDiv.style.left = parseInt(left) + (Math.random()*randomLength - randomLength/2) + "px";
+                
                 let feedbackDuration = setInterval(()=>{
                     document.getElementById(this.#id).remove();
                     clearInterval(feedbackDuration);
                 }, 500);
             }
         }
-
         
-
+        // reference: beatmap_id = 447879
+        let bpm = 224;
         const Note = class{
             static count = 0;
             #id;
             #sv;
             #isDon;
-            #delay;
-            constructor(sv, isDon, delay) {
+            #hitTimeMs;
+            
+            #progress = 0;
+            constructor(sv, isDon, hitTimeMs) {
                 this.#id = "note"+(++this.constructor.count);
-                this.#sv = sv;
+                this.#sv = sv*bpm*0.03;
                 this.#isDon = isDon;
-                this.#delay = delay;
+                this.#hitTimeMs = hitTimeMs/10;
 
                 // create update loop for this note
+                // remember to use z-index with the id value to place early notes on top of late notes
                 let noteDiv = document.createElement("div");
                 let noteType;
                 noteDiv.classList.add("circle");
-                if(this.isDon) noteType = "don"; else noteType = "katsu";
+                if(this.#isDon == 0) noteType = "don"; else noteType = "katsu";
                 noteDiv.classList.add(noteType);
                 noteDiv.id = this.#id;
+                noteDiv.style.zIndex = 99999 - this.constructor.count;
                 appendToPlayfield(noteDiv);
-                
-                let posLeft = playfieldLength+50;
+
+                let cursorPosLeft = window.getComputedStyle(document.getElementById("cursor")).getPropertyValue("left");
+                let posLeft = parseInt(cursorPosLeft) + (this.#sv*(this.#hitTimeMs-getTimestamp()));
                 let noteUpdate = setInterval(() => {
                     noteDiv.style.left = posLeft+"px";
-                    posLeft -= sv;
+                    posLeft -= this.#sv;
                     if(parseInt(noteDiv.style.left) < 0){
                         new Feedback(0);
                         noteDiv.remove();
@@ -176,13 +196,8 @@
             getId(){ return this.#id; }
             getSV(){ return this.#sv; }
             getIsDon(){ return this.#isDon; }
-            getDelay(){ return this.#delay; }
+            getHitTimeMs(){ return this.#hitTimeMs; }
         }
-
-        new Note(1, true, 100);
-        new Note(2, true, 200);
-        new Note(4, true, 200);
-        new Note(8, true, 200);
         
         const KeyClass = class{
             #id;
@@ -243,6 +258,48 @@
             }
         };
 
+        // let tempIsDon = true;
+        // let tempLengthNotes = 3;
+        // for (let i = 0; i < tempLengthNotes; i++) {
+        //     let sv = 1 + i;
+        //     if(i%2 == 0 && i != 0) tempIsDon = !tempIsDon;
+        //     let isDon;
+        //     if(tempIsDon) isDon = 0; else isDon = 1;
+            
+        //     new Note(1, isDon, 100*i+100);
+        // }
+        // new Note(2.2, 1, 100);
+        // new Note(2.3, 0, 100);
+        // new Note(2.4, 0, 100);
+        // new Note(2.5, 1, 100);
+        // new Note(2.6, 1, 100);
+        // new Note(2.7, 0, 100);
+        // new Note(2.8, 0, 100);
+        // new Note(2.9, 0, 100);
+        // new Note(3, 0, 100);
+
+        // reference: beatmap_id = 447879
+        new Note(1, 1, 631);
+        new Note(1, 0, 764);
+        new Note(1, 0, 1032);
+        new Note(1, 0, 1166);
+        new Note(1, 1, 1434);
+        new Note(1, 0, 1702);
+        new Note(1, 0, 1970);
+        new Note(1, 1, 2238);
+        new Note(1, 0, 2773);
+        new Note(1, 1, 3041);
+        new Note(1, 0, 3309);
+        new Note(1, 0, 3577);
+        new Note(1, 1, 3845);
+        new Note(1, 1, 4648);
+        new Note(1, 1, 4916);
+        new Note(1, 0, 5184);
+        new Note(1, 1, 5452);
+        new Note(1, 0, 5720);
+        new Note(1, 0, 5988);
+        new Note(1, 1, 6256);
+
         let fixedUpdate = setInterval(() => {
             for (let i = 0; i < KeyArray.length; i++) {
                 if(KeyArray[i].getPower() > 0) {
@@ -255,6 +312,7 @@
             }
 
         }, 10);
+
     </script>
 </body>
 </html>

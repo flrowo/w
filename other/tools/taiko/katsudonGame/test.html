@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        overflow: hidden;
+    }
+    body{
+        background-color: black;
+    }
+    #content{
+        width: 500px;
+        height: 400px;
+        background-color: black;
+        border: solid 1px white;
+    }
+    .note{
+        --note-size: 50px;
+        width: var(--note-size);
+        height: var(--note-size);
+        position: absolute;
+        border-radius: 50%;
+        background-color: brown;
+    }
+</style>
+<body>
+    <div id="content">
+        <div id="hud">
+
+        </div>
+        <div id="notes">
+
+        </div>
+    </div>
+    <script>
+        // video settings
+        let fps = 1000;
+        let frameLength = 1000/fps;
+
+        // note data
+        const Note = class Note{
+            static count = 0;
+            
+            #offsetInMs; #type; #sv; disabled; // constructor generated properties
+
+            #id; #startPosition; #zeroPosition; #countdownMs;  // predefined properties
+
+            constructor(type, sv, offset){
+                // set properties
+                this.#type = type;
+                this.#sv = sv;
+                this.#offsetInMs = offset;
+
+                this.#id = `note${this.constructor.count++}`;
+                let svMultiplier = 1;
+                this.#startPosition = this.#sv*this.#offsetInMs*svMultiplier;
+                this.#zeroPosition = 0;
+                this.#countdownMs = this.#offsetInMs;
+            }
+
+            create(){
+                // create instance in HTML
+                let noteDiv = document.createElement("div");
+                // div id
+                noteDiv.id = this.#id;
+                // div classes
+                noteDiv.classList.add("circle");
+                noteDiv.classList.add("note");
+                noteDiv.classList.add(this.#type ? "don" : "katsu");
+                // z-index
+                noteDiv.style.zIndex = 99999 - this.constructor.count;
+                document.getElementById("notes").appendChild(noteDiv);
+
+                // set initial position
+                this.#setPosition();
+            }
+            
+            move() {
+                let noteHTMLElement = document.getElementById(this.#id);
+
+                if(this.#countdownMs <= 0) {
+                    console.log("done: "+this.#id);
+                    this.#setDisabled();
+                    return;
+                }
+                console.log("style.left: " + noteHTMLElement.style.left);
+                this.#countdownMs = this.#countdownMs - frameLength;
+                this.#setPosition();
+            }
+
+            #setPosition(){
+                document.getElementById(this.#id).style.left = `${this.#startPosition*this.#countdownMs}px`;
+            }
+            
+            #setDisabled(){ this.disabled = true; }
+            getId(){ return this.#id; }
+        }
+
+        let notes = [new Note(0, 1, 500)];
+
+        let start = function() {
+            notes.forEach(note => {
+                note.create();
+            });
+        }
+        
+        start();
+        let fixedUpdate = setInterval(() => {
+            notes.forEach(note => {
+                if(!note.disabled) {
+                    note.move();
+                }
+            });
+        }, frameLength);
+        
+    </script>
+</body>
+</html>

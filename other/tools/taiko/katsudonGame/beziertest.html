@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    body{
+        background-color: black;
+    }
+    .log{
+        color: white;
+    }
+</style>
+<body>
+    <div class="log"></div>
+    <script>
+        let e = Math.pow;
+
+        function myBezier(t) {
+            let p1 = 0;
+            let p2 = 0.5;
+            let p3 = 0.5;
+            let p4 = 1;
+
+            let p = e((1-t),2)*p1 + 2*(1-t)*t*p2 + e(t,2)*p3;
+            
+            return p;
+        }
+
+        document.getElementsByClassName("log")[0].innerHTML = myBezier(0.5);
+    </script>
+</body>
+</html>

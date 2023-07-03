@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <style>
+    :root{
+        --note-border-size: 2px;
+        --red-note-border-color: rgba(255, 0, 0, 0.8);
+        --blue-note-border-color: rgba(0, 110, 255, 0.8);
+        --red-note-bg-color: rgba(255, 0, 0, 0.6);
+        --blue-note-bg-color: rgba(0, 110, 255, 0.6);
+    }
     *{
         margin: 0;
         overflow: hidden;
@@ -25,7 +32,14 @@
         height: var(--note-size);
         position: absolute;
         border-radius: 50%;
-        background-color: brown;
+        border-style: solid;
+        border-width: var(--note-border-size);
+    }.don{
+        border-color: var(--red-note-border-color);
+        background-color: var(--red-note-bg-color);
+    }.katsu{
+        border-color: var(--blue-note-border-color);
+        background-color: var(--blue-note-bg-color);
     }
 </style>
 <body>
@@ -48,7 +62,7 @@
             
             #offsetInMs; #type; #sv; disabled; // constructor generated properties
 
-            #id; #startPosition; #zeroPosition; #countdownMs;  // predefined properties
+            #id; #startPositionPx; #zeroPosition; #countdownMs;  // predefined properties
 
             constructor(type, sv, offset){
                 // set properties
@@ -57,8 +71,8 @@
                 this.#offsetInMs = offset;
 
                 this.#id = `note${this.constructor.count++}`;
-                let svMultiplier = 1;
-                this.#startPosition = this.#sv*this.#offsetInMs*svMultiplier;
+                let svMultiplier = 0.001;
+                this.#startPositionPx = this.#sv*this.#offsetInMs*svMultiplier;
                 this.#zeroPosition = 0;
                 this.#countdownMs = this.#offsetInMs;
             }
@@ -71,13 +85,14 @@
                 // div classes
                 noteDiv.classList.add("circle");
                 noteDiv.classList.add("note");
-                noteDiv.classList.add(this.#type ? "don" : "katsu");
+                noteDiv.classList.add(this.#type == 0 ? "don" : "katsu");
                 // z-index
                 noteDiv.style.zIndex = 99999 - this.constructor.count;
                 document.getElementById("notes").appendChild(noteDiv);
 
                 // set initial position
                 this.#setPosition();
+                console.log(document.getElementById(this.#id).style.left);
             }
             
             move() {
@@ -88,36 +103,44 @@
                     this.#setDisabled();
                     return;
                 }
-                console.log("style.left: " + noteHTMLElement.style.left);
+                //console.log("style.left: " + noteHTMLElement.style.left);
                 this.#countdownMs = this.#countdownMs - frameLength;
                 this.#setPosition();
             }
 
             #setPosition(){
-                document.getElementById(this.#id).style.left = `${this.#startPosition*this.#countdownMs}px`;
+                let pos = this.#startPositionPx*this.#countdownMs;
+                document.getElementById(this.#id).style.left = `${pos}px`;
             }
             
             #setDisabled(){ this.disabled = true; }
             getId(){ return this.#id; }
         }
 
-        let notes = [new Note(0, 1, 500)];
+        let notes = [
+            new Note(0, 1, 500),
+            new Note(0, 1, 1000),
+            new Note(0, 1, 600),
+        ];
 
-        let start = function() {
-            notes.forEach(note => {
-                note.create();
-            });
-        }
-        
-        start();
-        let fixedUpdate = setInterval(() => {
+        function fixedUpdate() {
             notes.forEach(note => {
                 if(!note.disabled) {
                     note.move();
                 }
             });
-        }, frameLength);
+
+            setTimeout(fixedUpdate, frameLength);
+        }
+
+        function start() {
+            notes.forEach(note => {
+                note.create();
+            });
+            fixedUpdate();
+        }
         
+        start();
     </script>
 </body>
 </html>

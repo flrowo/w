@@ -5,23 +5,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>map converter</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        color: white;
+    }
+
+    html, body{
+        width: 100%;
+        height: 100%;
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: black;
+    }
+
+    #content{
+        margin: auto 0 auto 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #mapText{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        height: 80%;
+        width: 50%;
+    } @media (max-width:900px) {
+        #mapText{
+            width: 90%
+        }
+    }
+
+    .button{
+        padding: 5px 10px;
+        width: auto;
+        height: auto;
+        cursor: pointer;
+        background-color: rgb(220, 220, 220);
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+    }
+</style>
+
 <body>
+    
+    <div id="content">
+        <p class="label">paste .osu file text here:</p>
+        <textarea id="mapText" cols="30" rows="10"></textarea>
+        <div class="button" onclick="convertMap();">CONVERT</div>
+    </div>
+    
     <script>
         
-        let tempDiv = document.createElement("div");
-        tempDiv.id = "output";
-        document.body.appendChild(tempDiv);
+        let bpm = 200;
+        let cursorOffsetPx = 120;
 
-        let stringToConvert = `
-        240,284,554,5,4,0:0:0:0:
-        240,284,760,1,8,0:0:0:0:
-        240,284,864,1,0,0:0:0:0:
-        240,284,1381,1,6,0:0:0:0:
-        240,284,1588,1,0,0:0:0:0:
-        `;
+        // https://osu.ppy.sh/wiki/en/Client/File_formats/osu_%28file_format%29
+        class Map{
+            // GENERAL
+            audioFilename;
+            previewTime;
 
+            // METADATA
+            title;
+            titleUnicode;
+            artist;
+            artistUnicode;
+            creator;
+            version;
+            source;
+            tags;
+            beatmapId;
+            beatmapSetId;
+
+            // DIFFICULTY
+            hpDrainRate;
+            od;
+            sliderMultiplier;
+            sliderTickRate;
+
+            // EVENTS
+            bgFilename;
+
+            // TIMING POINTS
+            timingPointsArray;
+
+            // HIT OBJECTS
+            hitObjectsArray;
+
+            constructor (
+                audioFilename, previewTime,
+                title, titleUnicode, artist, artistUnicode, creator, version, source, tags, beatmapId, beatmapSetId,
+                hpDrainRate, od, sliderMultiplier, sliderTickRate,
+                bgFilename, timingPointsArray, hitObjectsArray
+            ) {
+                // GENERAL
+                this.audioFilename = audioFilename;
+                this.previewTime = previewTime;
+
+                // METADATA
+                this.title = title;
+                this.titleUnicode = titleUnicode;
+                this.artist = artist;
+                this.artistUnicode = artistUnicode;
+                this.creator = creator;
+                this.version = version;
+                this.source = source;
+                this.tags = tags;
+                this.beatmapId = beatmapId;
+                this.beatmapSetId = beatmapSetId;
+
+                // DIFFICULTY
+                this.hpDrainRate = hpDrainRate;
+                this.od = od;
+                this.sliderMultiplier = sliderMultiplier;
+                this.sliderTickRate = sliderTickRate;
+
+                // EVENTS
+                this.bgFilename = bgFilename;
+
+                // TIMING POINTS
+                this.timingPointsArray = timingPointsArray;
+
+                // HIT OBJECTS
+                this.hitObjectsArray = hitObjectsArray;
+            }
+        }
+
+        class Note{
+            static count = 0;
+            
+            disabled; isNext; // other properties
+
+            #durationMs; #type; #sv; // constructor generated properties
+
+            #id; #divZIndex; #zeroPositionPx; #totalLengthPx; // predefined properties
+
+            constructor(sv, type, offset){
+                // set properties
+                this.#type = type;
+                this.#sv = sv;
+                this.#durationMs = offset;
+
+                this.disabled = false;
+                this.#id = `note${this.constructor.count}`;
+                this.#divZIndex = this.constructor.count;
+                let svMultiplier = this.#sv*bpm/300; // divided by 300 for note spacing 
+                this.#zeroPositionPx = cursorOffsetPx; // cursor position offset
+                this.#totalLengthPx = this.#durationMs*svMultiplier;
+
+                this.constructor.count++;
+            }
+
+            create(){
+                // create instance in HTML
+                let noteDiv = document.createElement("div");
+                // div id
+                noteDiv.id = this.#id;
+                // div classes
+                noteDiv.classList.add("circle");
+                noteDiv.classList.add("note");
+                noteDiv.classList.add(this.getType());
+                // z-index
+                noteDiv.style.zIndex = 99999 - this.#divZIndex; // 99999 should be changed to a "length of notes" variable
+                document.getElementById("notes").appendChild(noteDiv);
+
+                // set initial position
+                this.#setPosition(this.#totalLengthPx);
+            }
+            
+            move() {
+                if(this.disabled) return;
+
+                let percentage = getElapsedMs()/this.#durationMs;
+                let lengthPx = this.#totalLengthPx;
+
+                let posPx = lengthPx - (lengthPx*percentage) + this.#zeroPositionPx;
+                this.#setPosition(posPx);
+                
+                let hitErrorMs = getElapsedMs() - this.#durationMs;
+                if(hitErrorMs > ODinMs50) {
+                    this.#setPosition(this.#zeroPositionPx);
+                    new Feedback(0);
+                    this.#setDisabled();
+                }
+            }
+
+            hit(isDon){
+                let hitErrorMs = getElapsedMs() - this.#durationMs;
+
+                let feedbackColor = "black";
+                let feedbackNumber = 0;
+                let isHitColorRight;
+
+                if(this.getIsDon() != isDon){
+                    isHitColorRight = false;
+                } else isHitColorRight = true;
+
+                // SET FEEDBACK
+
+                // HIT 100% (GREAT)
+                if(isHitColorRight && (hitErrorMs <= ODinMs100 && hitErrorMs >= -ODinMs100)) {
+                    feedbackColor = "white";
+                    feedbackNumber = 1;
+                }
+
+                // HIT 50% (OK)
+                else if(isHitColorRight && (hitErrorMs <= ODinMs50 && hitErrorMs >= -ODinMs50) ) {
+                    feedbackColor = "green";
+                    feedbackNumber = 2;
+                }
+
+                // MISS
+                else if (hitErrorMs <= ODinMsMiss && hitErrorMs >= -ODinMsMiss) {
+                    feedbackColor = "red";
+                    feedbackNumber = 3;
+                }
+                
+                // CREATE FEEDBACK
+                if(feedbackNumber != 0) {
+                    console.log("%chitErrorMs: "+hitErrorMs+" ms", "color: "+feedbackColor+";");
+                    new Feedback(feedbackNumber);
+                    this.#setDisabled();
+                }
+            }
+
+            #setPosition(pos){
+                pos = pos + globalOffsetPx;
+                document.getElementById(this.#id).style.left = `${pos}px`;
+            }
+
+            #setDisabled(){ this.disabled = true; document.getElementById(this.#id).remove(); }
+            
+            getId(){ return this.#id; }
+            getSV(){ return this.#sv; }
+            getType(){ return (this.#type == 0 ? "don" : "katsu"); }
+            getIsDon(){ return (this.#type == 0 ? true : false); }
+            getOffset(){ return this.#durationMs; }
+        }
         
+        function convertMap() {
+            let noteStringArray = document.getElementById("mapText").innerHTML.split('\n');
+            let noteArray = [];
+
+            let tempSV = 1;
+
+            noteStringArray.forEach(noteString => {
+                let holder = noteString.split(',');
+                let tempType = holder[4];
+                let tempOffset = holder[2];
+                noteArray.push(new Note(tempSV, holder[4], holder[2]));
+            });
+            
+            console.log(noteArray);
+        }
+
+        let stringToConvertPlaceholder = `240,284,554,5,4,0:0:0:0:
+240,284,760,1,8,0:0:0:0:
+240,284,864,1,0,0:0:0:0:
+240,284,1381,1,6,0:0:0:0:
+240,284,1588,1,0,0:0:0:0:`;
+
+        document.getElementById("mapText").innerHTML = stringToConvertPlaceholder;
+
+
+
+
+
+        function parseGeneral() {
+            
+        }
+
+        function normalParse(tagToParse) {
+            console.log();
+
+            // search for tagToParse in .osu file
+        }
 
     </script>
+
 </body>
 </html>

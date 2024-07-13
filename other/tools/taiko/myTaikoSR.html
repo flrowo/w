@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color:white;
+        }
+        .dark-bg{
+            background-color: rgb(45, 44, 56);
+        }
+        .darker-bg{
+            background-color: rgb(30, 29, 41);
+        }
+    </style>
+</head>
+<body class="dark-bg">
+    <script>
+        class Note{
+            constructor(x, y, time, type, hitSound, objectParams, hitSample){
+                this.x = x;
+                this.y = y;
+                this.time = time;
+                this.type = type;
+                this.hitSound = hitSound;
+                this.objectParams = objectParams;
+                this.hitSample = hitSample;
+            }
+        }
+        
+        function round(n, nDigits = 0){
+            let aux = Math.pow(10,nDigits);
+            return Math.round(n*aux)/aux;
+        }
+
+        function avg(arrayOfNumbers){
+            let sum = 0;
+            let count = 0;
+            arrayOfNumbers.forEach(el => {
+                sum += el;
+                count++;
+            });
+            return sum/count;
+        }
+
+        function split(text, initialStr, endString) {
+            return text.split(initialStr)[1].trim().split(endString)[0].trim();
+        }
+
+        // beatmapArray is a table composed of 2 columns and many rows
+        // the columns are resp. TIMING and COLOR
+        let beatmapArray = [];
+        function changeFunc() {
+            // get beatmap file as text
+            let beatmapText = document.getElementById("beatmapTextarea").value;
+            
+            // get METADATA for the beatmap
+            // title, artist, creator, version, beatmapID
+            let metadataText = split(beatmapText,"[Metadata]","[Difficulty]");
+
+            let title = split(metadataText,"Title:","\n");
+            let artist = split(metadataText,"Artist:","\n");
+            let creator = split(metadataText,"Creator:","\n");
+            let version = split(metadataText,"Version:","\n");
+            let beatmapId = split(metadataText,"BeatmapID:","\n");
+            console.log(`${beatmapId}: ${artist} - ${title} (${creator}) [${version}]`);
+
+            // tempString gets all hitobjects in one string
+            let tempString = beatmapText.split("[HitObjects]")[1];
+            tempString = tempString.split("\n\n")[0].trim();
+            
+            // separate that string in one text array for each note
+            let tempStringArray = tempString.split("\n");
+            
+            // separate note text in Note objects
+            let x,y,time,type,hitSound,objectParams,hitSample;
+            let tempNoteArray = [];
+            tempStringArray.forEach(el => {
+                let attrb = el.split(",");
+                tempNoteArray.push(new Note(attrb[0], attrb[1], attrb[2], attrb[3], attrb[4], attrb[5], attrb[6]));
+            });
+            console.log("tempNoteArray:");
+            console.log(tempNoteArray);
+
+            calculateStamina(tempNoteArray);
+        }
+
+        function calculateStamina(noteArr) {
+            let noteDistArr = [];
+            let i = 1;
+            
+            // get distances between notes
+            while(noteArr.length > i){
+                noteDistArr.push(noteArr[i].time-noteArr[i-1].time);
+                i++;
+            }
+            console.log("noteDistArr:");
+            console.log(noteDistArr);
+
+            // get min and max
+            let minDistance = noteDistArr[0];
+            let maxDistance = noteDistArr[0];
+
+            i = 1;
+            while(noteDistArr.length > i){
+                let t = noteDistArr[i];
+                if(maxDistance < t){ maxDistance = t; }
+                if(minDistance > t){ minDistance = t; }
+                i++;
+            };
+
+            console.log(maxDistance);
+            console.log(minDistance);
+
+            let noteDistMaxFactor = [];
+            let noteDistMinFactor = [];
+            let noteDistFactorArr = [];
+            i = 0;
+            while(noteDistArr.length > i){
+                noteDistMinFactor = noteDistArr[i]/minDistance;
+                noteDistMaxFactor = maxDistance/noteDistArr[i]-1;
+                noteDistFactorArr.push(round(noteDistMaxFactor * noteDistMinFactor, 1));
+                i++;
+            }
+            console.log(avg(noteDistFactorArr));
+
+
+            let staminaReturn = 0;
+            return staminaReturn;
+        }
+    </script>
+    paste .osu here:
+    <br>
+    <textarea id="beatmapTextarea" cols="30" rows="10" class="darker-bg" onchange="changeFunc()"></textarea>
+    <div>
+        <div>
+            stamina:
+        </div>
+        <div id="staminaResult">
+            
+        </div>
+    </div>
+</body>
+</html>
